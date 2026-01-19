@@ -325,31 +325,50 @@
 
         .network-line {
             position: absolute;
-            background: linear-gradient(90deg, var(--bright-blue), var(--emerald-green));
-            height: 2px;
+            border-top: 2px dashed rgba(119, 182, 234, 0.8);
+            height: 0;
             transform-origin: left center;
             animation: lineGlow 2s ease-in-out infinite;
-            opacity: 0.6;
+            opacity: 0.8;
+            z-index: 5;
+            box-shadow: 0 0 6px rgba(119, 182, 234, 0.4);
         }
 
         @keyframes lineGlow {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.8; box-shadow: 0 0 10px var(--bright-blue); }
+            0%, 100% { 
+                opacity: 0.6; 
+                box-shadow: 0 0 6px rgba(119, 182, 234, 0.3);
+            }
+            50% { 
+                opacity: 1; 
+                box-shadow: 0 0 12px rgba(119, 182, 234, 0.7), 0 0 20px rgba(16, 185, 129, 0.4);
+            }
         }
 
         .data-pulse {
             position: absolute;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: var(--bright-blue);
             border-radius: 50%;
-            animation: dataPulse 3s linear infinite;
-            box-shadow: 0 0 10px var(--bright-blue);
+            animation: dataPulse 2.5s linear infinite;
+            box-shadow: 0 0 15px var(--bright-blue), 0 0 25px rgba(119, 182, 234, 0.8);
+            z-index: 6;
         }
 
         @keyframes dataPulse {
-            0% { transform: translate(0, 0); opacity: 1; }
-            100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+            0% { 
+                transform: translate(0, 0) scale(1); 
+                opacity: 1; 
+            }
+            50% {
+                transform: translate(calc(var(--dx) * 0.5), calc(var(--dy) * 0.5)) scale(1.3);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translate(var(--dx), var(--dy)) scale(0.8); 
+                opacity: 0; 
+            }
         }
 
         /* Cards with connection theme */
@@ -1028,48 +1047,91 @@
             const network = document.getElementById('networkViz');
             if (!network) return;
             
+            // Clear any existing lines
+            const existingLines = network.querySelectorAll('.network-line');
+            existingLines.forEach(line => line.remove());
+            
             const center = network.querySelector('.network-center');
             const nodes = network.querySelectorAll('.network-node');
             
-            const centerRect = center.getBoundingClientRect();
-            const networkRect = network.getBoundingClientRect();
-            
-            nodes.forEach((node, index) => {
-                const nodeRect = node.getBoundingClientRect();
+            // Use setTimeout to ensure layout is ready
+            setTimeout(() => {
+                const centerRect = center.getBoundingClientRect();
+                const networkRect = network.getBoundingClientRect();
                 
-                const line = document.createElement('div');
-                line.className = 'network-line';
+                // Get center and node radii
+                const centerRadius = centerRect.width / 2;
+                const nodeRadius = 55; // Half of 110px node width
                 
-                const startX = centerRect.left + centerRect.width / 2 - networkRect.left;
-                const startY = centerRect.top + centerRect.height / 2 - networkRect.top;
-                const endX = nodeRect.left + nodeRect.width / 2 - networkRect.left;
-                const endY = nodeRect.top + nodeRect.height / 2 - networkRect.top;
-                
-                const length = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
-                const angle = Math.atan2(endY - startY, endX - startX) * 180 / Math.PI;
-                
-                line.style.width = length + 'px';
-                line.style.left = startX + 'px';
-                line.style.top = startY + 'px';
-                line.style.transform = `rotate(${angle}deg)`;
-                line.style.animationDelay = (index * 0.2) + 's';
-                
-                network.appendChild(line);
-                
-                // Add data pulse
-                setInterval(() => {
-                    const pulse = document.createElement('div');
-                    pulse.className = 'data-pulse';
-                    pulse.style.left = startX + 'px';
-                    pulse.style.top = startY + 'px';
-                    pulse.style.setProperty('--dx', (endX - startX) + 'px');
-                    pulse.style.setProperty('--dy', (endY - startY) + 'px');
-                    network.appendChild(pulse);
+                nodes.forEach((node, index) => {
+                    const nodeRect = node.getBoundingClientRect();
                     
-                    setTimeout(() => pulse.remove(), 3000);
-                }, 2000 + index * 500);
-            });
+                    // Calculate center points
+                    const centerX = centerRect.left + centerRect.width / 2;
+                    const centerY = centerRect.top + centerRect.height / 2;
+                    const nodeX = nodeRect.left + nodeRect.width / 2;
+                    const nodeY = nodeRect.top + nodeRect.height / 2;
+                    
+                    // Calculate angle
+                    const dx = nodeX - centerX;
+                    const dy = nodeY - centerY;
+                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                    
+                    // Calculate start point (on edge of center circle)
+                    const startX = centerX + Math.cos(angle * Math.PI / 180) * centerRadius - networkRect.left;
+                    const startY = centerY + Math.sin(angle * Math.PI / 180) * centerRadius - networkRect.top;
+                    
+                    // Calculate end point (on edge of node circle)
+                    const endX = nodeX - Math.cos(angle * Math.PI / 180) * nodeRadius - networkRect.left;
+                    const endY = nodeY - Math.sin(angle * Math.PI / 180) * nodeRadius - networkRect.top;
+                    
+                    // Calculate length
+                    const length = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+                    
+                    const line = document.createElement('div');
+                    line.className = 'network-line';
+                    
+                    line.style.width = length + 'px';
+                    line.style.left = startX + 'px';
+                    line.style.top = startY + 'px';
+                    line.style.transform = `rotate(${angle}deg)`;
+                    line.style.animationDelay = (index * 0.3) + 's';
+                    
+                    network.insertBefore(line, center); // Insert before center so lines are behind nodes
+                    
+                    // Add data pulses with staggered timing
+                    const pulseInterval = setInterval(() => {
+                        if (!network.contains(center)) {
+                            clearInterval(pulseInterval);
+                            return;
+                        }
+                        
+                        const pulse = document.createElement('div');
+                        pulse.className = 'data-pulse';
+                        pulse.style.left = startX + 'px';
+                        pulse.style.top = startY + 'px';
+                        pulse.style.setProperty('--dx', (endX - startX) + 'px');
+                        pulse.style.setProperty('--dy', (endY - startY) + 'px');
+                        network.appendChild(pulse);
+                        
+                        setTimeout(() => {
+                            if (pulse.parentNode) {
+                                pulse.remove();
+                            }
+                        }, 2500);
+                    }, 2500 + index * 400);
+                });
+            }, 200);
         }
+        
+        // Recreate connections when slide 3 is shown
+        const originalShowSlide = showSlide;
+        showSlide = function(n) {
+            originalShowSlide(n);
+            if (n === 2) { // Slide 3 is index 2
+                setTimeout(createNetworkConnections, 300);
+            }
+        };
 
         // Export to PDF
         const exportBtn = document.createElement('button');
@@ -1080,9 +1142,15 @@
 
         // Initialize
         createParticles();
-        setTimeout(createNetworkConnections, 100);
         showSlide(0);
         updateProgress();
+        
+        // Create connections when slide 3 is first shown
+        setTimeout(() => {
+            if (currentSlide === 2) {
+                createNetworkConnections();
+            }
+        }, 500);
     </script>
 </body>
 </html>
