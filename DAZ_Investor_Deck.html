@@ -1102,10 +1102,10 @@
         /* Navigation */
         .navigation {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
+            bottom: 30px;
+            right: 30px;
             display: flex;
-            gap: 14px;
+            gap: 10px;
             z-index: 1000;
         }
 
@@ -1113,13 +1113,13 @@
             background: linear-gradient(135deg, var(--electric-blue) 0%, var(--navy-blue) 100%);
             color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 12px;
+            padding: 8px 16px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 13px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(46, 127, 230, 0.3);
+            box-shadow: 0 4px 16px rgba(46, 127, 230, 0.3);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(119, 182, 234, 0.3);
             position: relative;
@@ -1517,6 +1517,39 @@
             will-change: transform;
         }
         
+        /* Logo Styles */
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        .daz-logo {
+            width: 120px;
+            height: 120px;
+            filter: drop-shadow(0 0 30px rgba(119, 182, 234, 0.6));
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes logoGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 30px rgba(119, 182, 234, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 50px rgba(119, 182, 234, 1)) drop-shadow(0 0 70px rgba(16, 185, 129, 0.8));
+            }
+        }
+        
         /* Fade-in Animations */
         .fade-in {
             animation: fadeInUp 0.6s ease-out forwards;
@@ -1626,23 +1659,29 @@
 
         <!-- Slide 1: Title -->
         <div class="slide active title-slide">
+            <div class="logo-container">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='85' fill='none' stroke='%2377B6EA' stroke-width='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%2310B981' stroke-width='2' opacity='0.6'/%3E%3Ctext x='100' y='120' font-family='Inter, sans-serif' font-size='48' font-weight='900' text-anchor='middle' fill='%2377B6EA' letter-spacing='4'%3EDAZ%3C/text%3E%3Cg opacity='0.7'%3E%3Ccircle cx='80' cy='50' r='3' fill='%2377B6EA'/%3E%3Ccircle cx='100' cy='45' r='3' fill='%2377B6EA'/%3E%3Ccircle cx='120' cy='50' r='3' fill='%2377B6EA'/%3E%3Cline x1='80' y1='53' x2='80' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3Cline x1='100' y1='48' x2='100' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3Cline x1='120' y1='53' x2='120' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E" 
+                     alt="DAZ Logo" 
+                     class="daz-logo">
+            </div>
             <h1>DAZ</h1>
-            <div class="subtitle">The AGI Core for Real Estate Development</div>
-            <div class="tagline">Instant Certainty. Total Transparency.</div>
+            <div class="subtitle">Slashing Real Estate Due Diligence from Weeks to Minutes</div>
+            <div class="tagline">AGI-Driven Business Plans • Instant Legal Certainty • Total Project Transparency</div>
             <div class="contact">[Your Name] | [Email] | [Website]</div>
         </div>
 
         <!-- Slide 2: The Problem -->
         <div class="slide problem-slide">
-            <h1>🚨 99% Waste in Manual Due Diligence</h1>
+            <h1>⏰ Real Estate Development: Weeks of Manual Work</h1>
             <div class="stat-box">
                 <div class="number counter-number">99%</div>
-                <p>of time spent manually collecting, verifying, and cross-referencing data</p>
+                <p>of due diligence time wasted on manual, fragmented processes</p>
             </div>
-            <ul>
-                <li><strong>❌ Fragmented Processes:</strong> Siloed functions across Finance, Planning, Legal, Marketing, and Project Management</li>
-                <li><strong>⚠️ High Risk Profile:</strong> Errors, delays, and cost overruns from lack of centralization</li>
-                <li><strong>📄 No Automation:</strong> Critical decisions rely on outdated "paper maps" instead of real-time intelligence</li>
+            <p style="font-size: 26px; margin: 30px 0; text-align: center;"><strong>⚡ DAZ eliminates this waste with instant AGI-powered solutions</strong></p>
+            <ul style="font-size: 20px; margin-top: 30px;">
+                <li><strong>❌ Weeks → Minutes:</strong> Manual data collection replaced by instant AGI analysis</li>
+                <li><strong>⚠️ Uncertainty → Clarity:</strong> Fragmented decisions replaced by comprehensive intelligence</li>
+                <li><strong>📄 Outdated → Real-Time:</strong> "Paper maps" replaced by AGI navigation</li>
             </ul>
             <div class="market-data">
                 <div class="market-box">
@@ -1659,10 +1698,14 @@
 
         <!-- Slide 3: The Solution -->
         <div class="slide solution-slide">
-            <h1>🧭 GPS for Real Estate Entrepreneurs</h1>
-            <h2>Replacing "Paper Maps" 📄 with Real-Time Navigation 🚀</h2>
-            <p style="font-size: 24px; margin: 25px 0;"><strong>⚡ DAZ: The Autonomous "Motherboard" for Real Estate</strong></p>
-            <p style="font-size: 20px; color: var(--text-gray);">AGI-powered Virtual Executive Team—autonomous agents replacing fragmented manual processes</p>
+            <h1>⚡ From Weeks to Minutes: DAZ Delivers</h1>
+            <h2>Your Autonomous AGI Motherboard for Real Estate</h2>
+            <p style="font-size: 28px; margin: 30px 0; text-align: center; line-height: 1.5;">
+                <strong>Instant Legal Certainty • Instant Financial Models • Instant Business Plans</strong>
+            </p>
+            <p style="font-size: 22px; color: var(--warm-gray); text-align: center; margin-bottom: 35px;">
+                DAZ replaces fragmented manual processes with an AGI core powering everything from feasibility to execution
+            </p>
             <div class="agents-grid">
                 <div class="agent-card">
                     <h3>💰 Finance Agent</h3>
@@ -1687,13 +1730,16 @@
             </div>
             <div class="performance-metric">
                 <div class="metric">⏰ Weeks → ⚡ Minutes</div>
-                <p>Transform due diligence from weeks to minutes</p>
+                <p><strong>Comprehensive AGI-driven solutions for continuous project clarity</strong></p>
             </div>
         </div>
 
         <!-- Slide 4: Product (MVP) -->
         <div class="slide product-slide">
-            <h1>🎯 6-Module Suite: Instant Business Intelligence</h1>
+            <h1>🎯 Complete AGI Suite: Instant Intelligence</h1>
+            <p style="font-size: 22px; margin-bottom: 30px; text-align: center; color: var(--warm-gray);">
+                Every module delivers instant, comprehensive insights for continuous clarity
+            </p>
             <div class="modules-grid">
                 <div class="module-card">
                     <div class="number">1</div>
@@ -1726,14 +1772,17 @@
                     <p>Timeline management & risk monitoring</p>
                 </div>
             </div>
-            <div style="margin-top: 35px; text-align: center; font-size: 22px;">
-                <p><strong>📥 Input:</strong> Project parameters → <strong>🤖 Processing:</strong> Multi-agent AGI analysis → <strong>📤 Output:</strong> Comprehensive business intelligence</p>
+            <div style="margin-top: 35px; text-align: center; font-size: 24px; line-height: 1.6;">
+                <p><strong>⚡ Minutes, not weeks:</strong> Instant AGI analysis delivering total transparency and certainty for better decision-making</p>
             </div>
         </div>
 
         <!-- Slide 5: Technology -->
         <div class="slide tech-slide">
-            <h1>🤖 Multi-Agent AGI System</h1>
+            <h1>🤖 AGI Core: Instant Analysis, Continuous Clarity</h1>
+            <p style="font-size: 22px; margin-bottom: 30px; text-align: center; color: var(--warm-gray);">
+                Advanced multi-agent system delivering comprehensive solutions in minutes
+            </p>
             <div class="capabilities">
                 <div class="capability-item">
                     <h3>💬 Natural Language Understanding</h3>
@@ -1754,7 +1803,7 @@
             </div>
             <div class="performance-metric">
                 <div class="metric">⏰ 2-4 Weeks → ⚡ Minutes</div>
-                <p><strong class="highlight-number counter-number">99%+</strong> time reduction in due diligence</p>
+                <p><strong class="highlight-number counter-number">99%+</strong> time reduction — instant certainty for entrepreneurs</p>
             </div>
             <ul style="margin-top: 30px; font-size: 19px;">
                 <li>⚙️ <strong>Specialized agents</strong> for each domain with coordinated workflow</li>
@@ -1766,7 +1815,10 @@
 
         <!-- Slide 6: Market Opportunity -->
         <div class="slide market-slide">
-            <h1>🌍 Global Real Estate Entrepreneurs Seeking Clarity</h1>
+            <h1>🌍 Massive Market: Entrepreneurs Need Instant Clarity</h1>
+            <p style="font-size: 22px; margin-bottom: 30px; text-align: center; color: var(--warm-gray);">
+                Real estate entrepreneurs worldwide demand faster, smarter, AGI-driven decision-making
+            </p>
             <div class="market-data">
                 <div class="market-box">
                     <h3>📈 PropTech Market</h3>
@@ -1801,7 +1853,10 @@
 
         <!-- Slide 7: Business Model -->
         <div class="slide business-slide">
-            <h1>💰 Tiered Pricing: From Planning to Full Autonomy</h1>
+            <h1>💰 Scalable Model: Instant Value at Every Tier</h1>
+            <p style="font-size: 22px; margin-bottom: 30px; text-align: center; color: var(--warm-gray);">
+                From instant business plans to full AGI-powered project management
+            </p>
             <div class="tiers">
                 <div class="tier-card">
                     <h3>📋 Tier 1: Planning</h3>
@@ -1834,14 +1889,18 @@
                     <p style="font-size: 16px; color: var(--text-gray); opacity: 0.9; font-weight: 600;">💎 Enterprise + per-project fees</p>
                 </div>
             </div>
-            <div style="margin-top: 40px; text-align: center; font-size: 20px;">
-                <p><strong>➕ Additional Revenue:</strong> Premium support, custom integrations, data partnerships</p>
+            <div style="margin-top: 40px; text-align: center; font-size: 22px;">
+                <p><strong>⚡ Every tier delivers instant clarity and continuous value</strong></p>
+                <p style="margin-top: 15px; font-size: 18px; color: var(--warm-gray);">Additional revenue: Premium support, custom integrations, data partnerships</p>
             </div>
         </div>
 
         <!-- Slide 8: Roadmap -->
         <div class="slide roadmap-slide">
-            <h1>🗓️ From MVP to Full Project Autonomy</h1>
+            <h1>🗓️ Roadmap: Scaling Instant Intelligence</h1>
+            <p style="font-size: 22px; margin-bottom: 30px; text-align: center; color: var(--warm-gray);">
+                From instant business plans to complete autonomous project management
+            </p>
             <div class="phases">
                 <div class="phase">
                     <h3>🚀 Phase 1: MVP Launch</h3>
@@ -1907,6 +1966,9 @@
         <!-- Slide 10: Closing / The Ask -->
         <div class="slide closing-slide">
             <h1>⚡ DAZ: Instant Certainty. Total Transparency.</h1>
+            <p style="font-size: 28px; margin: 30px 0; text-align: center; line-height: 1.6;">
+                <strong>Transform real estate projects from weeks of uncertainty to minutes of clarity</strong>
+            </p>
             <div class="ask-amount">
                 <div class="amount counter-number">💰 $3-5M</div>
                 <p style="font-size: 26px; font-weight: 600;">Funding Round</p>
@@ -1936,6 +1998,11 @@
             <div style="margin-top: 45px; text-align: center;">
                 <h2 style="margin-bottom: 20px;">📊 Projected Outcomes</h2>
                 <p style="font-size: 22px;"><strong>Year 2-3:</strong> <span class="highlight-number counter-number">$2-5M ARR</span> | <span class="highlight-number counter-number">100-200</span> active customers | 🏆 Market leadership position</p>
+            </div>
+            <div style="margin-top: 40px; text-align: center; font-size: 24px; line-height: 1.8;">
+                <p><strong>⚡ Join us in delivering instant, AGI-powered solutions</strong></p>
+                <p style="margin-top: 20px; font-size: 20px;">Comprehensive clarity. Better decisions. Continuous transparency.</p>
+                <p style="margin-top: 30px; font-size: 18px; color: var(--warm-gray);">[Your Name] | [Email] | [Phone] | [Website]</p>
             </div>
         </div>
 
