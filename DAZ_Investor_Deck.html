@@ -451,6 +451,292 @@
             50% { box-shadow: 0 0 0 10px transparent; }
         }
 
+        /* Enhanced Roadmap Styles */
+        .roadmap-phase {
+            background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1));
+            border-left: 4px solid var(--bright-blue);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bright-blue), var(--emerald-green));
+            animation: phaseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes phaseGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; box-shadow: 0 0 15px var(--bright-blue); }
+        }
+
+        .roadmap-phase:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 40px rgba(119, 182, 234, 0.3);
+            border-left-color: var(--emerald-green);
+        }
+
+        .roadmap-date {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--bright-blue);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .roadmap-target {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald-green);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Enhanced Team Cards */
+        .team-member-card {
+            background: linear-gradient(135deg, rgba(119, 182, 234, 0.12), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(119, 182, 234, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(119, 182, 234, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(119, 182, 234, 0.4);
+            border-color: var(--bright-blue);
+        }
+
+        .team-member-card:hover::before {
+            opacity: 1;
+        }
+
+        .team-avatar-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--bright-blue), var(--emerald-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            border: 3px solid rgba(119, 182, 234, 0.3);
+            box-shadow: 0 8px 24px rgba(119, 182, 234, 0.3);
+        }
+
+        .team-role {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--bright-blue);
+            margin: 8px 0 4px 0;
+        }
+
+        .team-expertise {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Vertical Split Layout for Slide 6 */
+        .roadmap-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .roadmap-card {
+            background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1));
+            border-left: 4px solid var(--bright-blue);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 200px;
+        }
+
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bright-blue), var(--emerald-green));
+            animation: phaseGlow 2s ease-in-out infinite;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(119, 182, 234, 0.4);
+            border-left-color: var(--emerald-green);
+        }
+
+        .roadmap-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .roadmap-card-icon {
+            font-size: 28px;
+        }
+
+        .roadmap-card-date {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--bright-blue);
+        }
+
+        .roadmap-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .roadmap-card-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--warm-gray);
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        .roadmap-card-target {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald-green);
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .team-card-horizontal {
+            background: linear-gradient(135deg, rgba(119, 182, 234, 0.12), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(119, 182, 234, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 200px;
+        }
+
+        .team-card-horizontal::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(119, 182, 234, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .team-card-horizontal:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(119, 182, 234, 0.4);
+            border-color: var(--bright-blue);
+        }
+
+        .team-card-horizontal:hover::before {
+            opacity: 1;
+        }
+
+        .team-card-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--bright-blue), var(--emerald-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            border: 3px solid rgba(119, 182, 234, 0.3);
+            box-shadow: 0 8px 24px rgba(119, 182, 234, 0.3);
+        }
+
+        .team-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 6px;
+        }
+
+        .team-card-role {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--bright-blue);
+            margin-bottom: 8px;
+        }
+
+        .team-card-expertise {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .section-header {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--bright-blue);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
         /* Team Grid */
         .team-grid {
             display: grid;
@@ -864,55 +1150,82 @@
 
         <!-- Slide 6: Roadmap + Team -->
         <div class="slide">
-            <h1>🗓️ Roadmap to Market Leadership</h1>
+            <h1>🚀 Our Journey & Team</h1>
+            <p style="text-align: center; font-size: 18px; color: var(--warm-gray); margin-bottom: 35px;">
+                Building the future of real estate with expert leadership
+            </p>
             
-            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; margin-top: 30px;">
-                <div>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3 style="color: var(--bright-blue);">Q2 2026: MVP Launch</h3>
-                            <p style="font-size: 17px; margin-top: 10px;">Core agent network + Feasibility analysis tool</p>
-                            <p style="font-size: 17px; color: var(--emerald-green); margin-top: 5px;">Target: 10-20 beta customers</p>
+            <!-- Roadmap Section (Top) -->
+            <div>
+                <h2 class="section-header">🗓️ Roadmap</h2>
+                <div class="roadmap-section">
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <span class="roadmap-card-icon">🚀</span>
+                            <span class="roadmap-card-date">Q2 2026</span>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <h3 style="color: var(--bright-blue);">Q4 2026: Full Platform</h3>
-                            <p style="font-size: 17px; margin-top: 10px;">Complete agent ecosystem + Monitoring dashboard</p>
-                            <p style="font-size: 17px; color: var(--emerald-green); margin-top: 5px;">Target: 50+ active customers</p>
+                        <div class="roadmap-card-title">MVP Launch</div>
+                        <div class="roadmap-card-description">
+                            Core agent network + Feasibility analysis tool
                         </div>
-                        
-                        <div class="timeline-item">
-                            <h3 style="color: var(--bright-blue);">2027: Scale & Expand</h3>
-                            <p style="font-size: 17px; margin-top: 10px;">International markets + Enterprise features</p>
-                            <p style="font-size: 17px; color: var(--emerald-green); margin-top: 5px;">Target: 200+ customers, $2-5M ARR</p>
+                        <span class="roadmap-card-target">Target: 10-20 beta customers</span>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <span class="roadmap-card-icon">⚡</span>
+                            <span class="roadmap-card-date">Q4 2026</span>
                         </div>
+                        <div class="roadmap-card-title">Full Platform</div>
+                        <div class="roadmap-card-description">
+                            Complete agent ecosystem + Monitoring dashboard
+                        </div>
+                        <span class="roadmap-card-target">Target: 50+ active customers</span>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <span class="roadmap-card-icon">🌟</span>
+                            <span class="roadmap-card-date">2027</span>
+                        </div>
+                        <div class="roadmap-card-title">Scale & Expand</div>
+                        <div class="roadmap-card-description">
+                            International markets + Enterprise features
+                        </div>
+                        <span class="roadmap-card-target">Target: 200+ customers, $2-5M ARR</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section (Bottom) -->
+            <div>
+                <h2 class="section-header">👥 Founding Team</h2>
+                <div class="team-section">
+                    <div class="team-card-horizontal">
+                        <div class="team-card-avatar">AK</div>
+                        <div class="team-card-name">Alpir Kritzler</div>
+                        <div class="team-card-role">CEO & Founder</div>
+                        <div class="team-card-expertise">Real Estate & Product Strategy</div>
+                    </div>
+                    
+                    <div class="team-card-horizontal">
+                        <div class="team-card-avatar">OZ</div>
+                        <div class="team-card-name">Or Zelniker</div>
+                        <div class="team-card-role">CRO</div>
+                        <div class="team-card-expertise">Real Estate & Legal Expertise</div>
+                    </div>
+                    
+                    <div class="team-card-horizontal">
+                        <div class="team-card-avatar">DP</div>
+                        <div class="team-card-name">Dor Perez</div>
+                        <div class="team-card-role">CTO</div>
+                        <div class="team-card-expertise">AI/AGI Technology</div>
                     </div>
                 </div>
                 
-                <div>
-                    <h2 style="margin-bottom: 25px;">👥 Expert Team</h2>
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <div class="connected-card" style="padding: 20px;">
-                            <h3>Alpir Kritzler</h3>
-                            <p style="color: var(--bright-blue); margin: 5px 0;">CEO & Founder</p>
-                            <p style="font-size: 15px; color: var(--text-muted);">Real Estate & Product</p>
-                        </div>
-                        
-                        <div class="connected-card" style="padding: 20px;">
-                            <h3>Or Zelniker</h3>
-                            <p style="color: var(--bright-blue); margin: 5px 0;">CRO</p>
-                            <p style="font-size: 15px; color: var(--text-muted);">Real Estate & Legal</p>
-                        </div>
-                        
-                        <div class="connected-card" style="padding: 20px;">
-                            <h3>Dor Perez</h3>
-                            <p style="color: var(--bright-blue); margin: 5px 0;">CTO</p>
-                            <p style="font-size: 15px; color: var(--text-muted);">AI/AGI Technology</p>
-                        </div>
-                    </div>
-                    
-                    <p style="text-align: center; margin-top: 20px; font-size: 16px;">
-                        <strong>Deep expertise in Real Estate, Law, and AI</strong>
+                <div style="text-align: center; margin-top: 24px; padding: 14px; background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05)); border-radius: 12px;">
+                    <p style="font-size: 13px; color: var(--warm-gray); line-height: 1.5;">
+                        <strong style="color: var(--bright-blue);">Deep expertise</strong> across Real Estate, Law, and AI
                     </p>
                 </div>
             </div>
