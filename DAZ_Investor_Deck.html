@@ -851,6 +851,31 @@
             color: white;
         }
 
+        /* Translate Button */
+        .translate-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(119, 182, 234, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(119, 182, 234, 0.5);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .translate-btn:hover {
+            opacity: 1;
+            background: rgba(119, 182, 234, 0.5);
+            color: white;
+            border-color: var(--bright-blue);
+        }
+
         .progress-indicator {
             position: fixed;
             top: 0;
@@ -978,8 +1003,101 @@
         }
 
         @media print {
-            .slide { page-break-after: always; background: white; color: #000; }
-            .navigation, .slide-counter, .export-btn, .particles { display: none !important; }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: #000 !important;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .presentation-container {
+                width: 100%;
+                height: auto;
+            }
+            
+            .slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: block !important;
+                position: relative !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                padding: 60px 80px !important;
+                background: linear-gradient(135deg, #000000 0%, #0a0e1a 30%, #0d1929 60%, #000000 100%) !important;
+                color: #FFFFFF !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+            
+            .slide.active {
+                display: block !important;
+            }
+            
+            .slide h1, .slide h2, .slide h3 {
+                color: #FFFFFF !important;
+                -webkit-text-fill-color: #FFFFFF !important;
+                background: none !important;
+            }
+            
+            .slide h1 {
+                background: linear-gradient(135deg, #FFFFFF 0%, #EBEFF2 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+            }
+            
+            .slide h2 {
+                background: linear-gradient(135deg, var(--bright-blue) 0%, var(--electric-blue) 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+            }
+            
+            .slide p, .slide li {
+                color: #EBEFF2 !important;
+            }
+            
+            .navigation, .slide-counter, .export-btn, .translate-btn, .particles {
+                display: none !important;
+            }
+            
+            .network-container {
+                height: 400px !important;
+                page-break-inside: avoid;
+            }
+            
+            .connected-card, .market-box, .funding-item, .roadmap-card, .team-card-horizontal, .ask-amount {
+                page-break-inside: avoid;
+                background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1)) !important;
+                border: 1px solid rgba(119, 182, 234, 0.3) !important;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+            }
+            
+            .network-line {
+                border-top: 2px dashed rgba(119, 182, 234, 0.8) !important;
+            }
+            
+            .network-node {
+                background: linear-gradient(135deg, rgba(119, 182, 234, 0.2), rgba(16, 185, 129, 0.1)) !important;
+                border: 2px solid rgba(119, 182, 234, 0.5) !important;
+            }
+            
+            .network-center {
+                background: linear-gradient(135deg, rgba(119, 182, 234, 0.3), rgba(16, 185, 129, 0.2)) !important;
+                border: 3px solid var(--bright-blue) !important;
+            }
+            
+            @page {
+                size: landscape;
+                margin: 0;
+            }
         }
     </style>
 </head>
@@ -1030,8 +1148,8 @@
 
         <!-- Slide 3: Solution - The Agent Network -->
         <div class="slide">
-            <h1>⚡ DAZ: Your AI Personal Assistant Network</h1>
-            <p style="text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--warm-gray);">
+            <h1 data-hebrew="⚡ DAZ: רשת העוזרים האישיים שלך">⚡ DAZ: Your AI Personal Assistant Network</h1>
+            <p style="text-align: center; font-size: 24px; margin-bottom: 30px; color: var(--warm-gray);" data-hebrew="מערכת אקולוגית מחוברת של סוכני AI מומחים שעובדים יחד עבורך">
                 A connected ecosystem of specialized AI agents working together for you
             </p>
             
@@ -1040,38 +1158,38 @@
                     <div class="network-center-text">DAZ<br/>Core</div>
                 </div>
                 
-                <div class="network-node" style="top: 10%; left: 50%; transform: translateX(-50%);">
+                <div class="network-node" style="top: -10%; left: 45%; transform: translateX(-50%);">
                     <div class="network-node-icon">👨‍💼</div>
-                    <div class="network-node-title">Financial Analyst</div>
+                    <div class="network-node-title" data-hebrew="אנליסט פיננסי">Financial Analyst</div>
                 </div>
                 
-                <div class="network-node" style="top: 30%; left: 85%;">
+                <div class="network-node" style="top: 10%; left: 65%;">
                     <div class="network-node-icon">⚖️</div>
-                    <div class="network-node-title">Legal Expert</div>
+                    <div class="network-node-title" data-hebrew="מומחה משפטי">Legal Expert</div>
                 </div>
                 
-                <div class="network-node" style="top: 65%; left: 85%;">
+                <div class="network-node" style="top: 65%; left: 75%;">
                     <div class="network-node-icon">🏗️</div>
-                    <div class="network-node-title">Architect</div>
+                    <div class="network-node-title" data-hebrew="אדריכל">Architect</div>
                 </div>
                 
-                <div class="network-node" style="bottom: 10%; left: 50%; transform: translateX(-50%);">
+                <div class="network-node" style="bottom: -15%; left: 50%; transform: translateX(-50%);">
                     <div class="network-node-icon">📊</div>
-                    <div class="network-node-title">Project Manager</div>
+                    <div class="network-node-title" data-hebrew="מנהל פרויקטים">Project Manager</div>
                 </div>
                 
-                <div class="network-node" style="top: 65%; left: 5%;">
+                <div class="network-node" style="top: 70%; left: 20%;">
                     <div class="network-node-icon">📢</div>
-                    <div class="network-node-title">Marketing Strategist</div>
+                    <div class="network-node-title" data-hebrew="אסטרטג שיווק">Marketing Strategist</div>
                 </div>
                 
-                <div class="network-node" style="top: 30%; left: 5%;">
+                <div class="network-node" style="top: 20%; left: 20%;">
                     <div class="network-node-icon">💰</div>
-                    <div class="network-node-title">Property Appraiser</div>
+                    <div class="network-node-title" data-hebrew="שמאי נכסים">Property Appraiser</div>
                 </div>
             </div>
             
-            <p style="text-align: center; font-size: 22px; margin-top: 30px;">
+            <p style="text-align: center; font-size: 22px; margin-top: 30px;" data-hebrew="⚡ כל הסוכנים מחוברים, כל הנתונים מסונכרנים, כל התובנות מיידיות">
                 <strong>⚡ All agents connected, all data synchronized, all insights instant</strong>
             </p>
         </div>
@@ -1450,8 +1568,62 @@
         const exportBtn = document.createElement('button');
         exportBtn.className = 'export-btn';
         exportBtn.textContent = 'PDF';
-        exportBtn.onclick = () => window.print();
+        exportBtn.onclick = () => {
+            // Show all slides for PDF
+            slides.forEach((slide, index) => {
+                slide.classList.add('active');
+                slide.style.display = 'flex';
+            });
+            window.print();
+            // Restore after print
+            setTimeout(() => {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                    slide.style.display = 'none';
+                });
+                slides[currentSlide].classList.add('active');
+                slides[currentSlide].style.display = 'flex';
+            }, 1000);
+        };
         document.body.appendChild(exportBtn);
+
+        // Translate Button
+        let isHebrew = false;
+        const translations = {
+            '⚡ DAZ: Your AI Personal Assistant Network': '⚡ DAZ: רשת העוזרים האישיים שלך',
+            'A connected ecosystem of specialized AI agents working together for you': 'מערכת אקולוגית מחוברת של סוכני AI מומחים שעובדים יחד עבורך',
+            '⚡ All agents connected, all data synchronized, all insights instant': '⚡ כל הסוכנים מחוברים, כל הנתונים מסונכרנים, כל התובנות מיידיות',
+            'Financial Analyst': 'אנליסט פיננסי',
+            'Legal Expert': 'מומחה משפטי',
+            'Architect': 'אדריכל',
+            'Project Manager': 'מנהל פרויקטים',
+            'Marketing Strategist': 'אסטרטג שיווק',
+            'Property Appraiser': 'שמאי נכסים'
+        };
+
+        function toggleLanguage() {
+            isHebrew = !isHebrew;
+            document.querySelectorAll('[data-hebrew]').forEach(el => {
+                if (isHebrew) {
+                    if (!el.dataset.original) {
+                        el.dataset.original = el.textContent;
+                    }
+                    el.textContent = el.dataset.hebrew;
+                } else {
+                    if (el.dataset.original) {
+                        el.textContent = el.dataset.original;
+                    }
+                }
+            });
+            document.getElementById('translate-btn').textContent = isHebrew ? 'English' : 'עברית';
+        }
+
+        const translateBtn = document.createElement('button');
+        translateBtn.id = 'translate-btn';
+        translateBtn.className = 'translate-btn';
+        translateBtn.textContent = 'עברית';
+        translateBtn.onclick = toggleLanguage;
+        document.body.appendChild(translateBtn);
 
         // Initialize
         createParticles();
