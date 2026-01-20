@@ -1025,6 +1025,124 @@
             .market-grid, .funding-grid { grid-template-columns: 1fr; }
         }
 
+        /* RTL Support */
+        html[dir="rtl"] body {
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .slide {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .title-slide {
+            text-align: center;
+        }
+
+        html[dir="rtl"] .connected-card ul {
+            text-align: right;
+            padding-right: 20px;
+            padding-left: 0;
+        }
+
+        html[dir="rtl"] .funding-item {
+            border-left: none;
+            border-right: 4px solid var(--bright-blue);
+            text-align: right;
+        }
+
+        html[dir="rtl"] .funding-item:hover {
+            transform: translateX(-10px);
+            border-right-color: var(--gold);
+        }
+
+        html[dir="rtl"] .roadmap-card {
+            border-left: none;
+            border-right: 4px solid var(--bright-blue);
+            text-align: right;
+        }
+
+        html[dir="rtl"] .roadmap-card::before {
+            left: auto;
+            right: 0;
+        }
+
+        html[dir="rtl"] .roadmap-card:hover {
+            border-right-color: var(--emerald-green);
+        }
+
+        html[dir="rtl"] .roadmap-phase {
+            border-left: none;
+            border-right: 4px solid var(--bright-blue);
+        }
+
+        html[dir="rtl"] .roadmap-phase::before {
+            left: auto;
+            right: 0;
+        }
+
+        html[dir="rtl"] .roadmap-phase:hover {
+            transform: translateX(-8px);
+            border-right-color: var(--emerald-green);
+        }
+
+        html[dir="rtl"] .timeline {
+            padding-left: 0;
+            padding-right: 35px;
+        }
+
+        html[dir="rtl"] .timeline::before {
+            left: auto;
+            right: 0;
+        }
+
+        html[dir="rtl"] .timeline-item {
+            padding-left: 0;
+            padding-right: 25px;
+        }
+
+        html[dir="rtl"] .timeline-item::before {
+            left: auto;
+            right: -40px;
+        }
+
+        html[dir="rtl"] .navigation {
+            right: auto;
+            left: 30px;
+            flex-direction: row-reverse;
+        }
+
+        html[dir="rtl"] .slide-counter {
+            right: auto;
+            left: 40px;
+        }
+
+        html[dir="rtl"] .translate-btn {
+            right: auto;
+            left: 10px;
+        }
+
+        html[dir="rtl"] .export-btn {
+            left: auto;
+            right: 10px;
+        }
+
+        html[dir="rtl"] .market-box,
+        html[dir="rtl"] .team-card-horizontal {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .team-card-horizontal {
+            text-align: center;
+        }
+
+        html[dir="rtl"] .roadmap-card-header {
+            flex-direction: row-reverse;
+        }
+
+        html[dir="rtl"] .section-header {
+            text-align: center;
+        }
+
         @media print {
             * {
                 -webkit-print-color-adjust: exact !important;
@@ -1138,33 +1256,33 @@
                      class="daz-logo">
             </div>
             <h1>DAZ</h1>
-            <div class="subtitle">Your AI Personal Assistant for Real Estate Projects</div>
-            <div class="tagline">From Weeks of Uncertainty → Minutes of Clarity</div>
+            <div class="subtitle" data-hebrew="העוזר האישי שלך מבוסס AI לפרויקטי נדל״ן">Your AI Personal Assistant for Real Estate Projects</div>
+            <div class="tagline" data-hebrew="משבועות של אי-ודאות ← לדקות של בהירות">From Weeks of Uncertainty → Minutes of Clarity</div>
         </div>
 
         <!-- Slide 2: Problem + Market -->
         <div class="slide">
-            <h1>⏰ Real Estate Development: Weeks of Manual Work</h1>
+            <h1 data-hebrew="⏰ פיתוח נדל״ן: שבועות של עבודה ידנית">⏰ Real Estate Development: Weeks of Manual Work</h1>
             <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="text-align: center; margin-bottom: 25px;">The Traditional Process</h2>
+                <h2 style="text-align: center; margin-bottom: 25px;" data-hebrew="התהליך המסורתי">The Traditional Process</h2>
                 <ul style="font-size: 21px;">
-                    <li><strong>📋 Weeks of data gathering</strong> - Manual collection from multiple sources</li>
-                    <li><strong>❌ Fragmented decisions</strong> - No centralized intelligence</li>
-                    <li><strong>⚠️ High uncertainty</strong> - Missing critical information</li>
-                    <li><strong>💰 Expensive mistakes</strong> - Discovered too late in the process</li>
+                    <li data-hebrew="📋 שבועות של איסוף נתונים - איסוף ידני ממקורות מרובים"><strong>📋 Weeks of data gathering</strong> - Manual collection from multiple sources</li>
+                    <li data-hebrew="❌ החלטות מפוצלות - ללא מודיעין מרכזי"><strong>❌ Fragmented decisions</strong> - No centralized intelligence</li>
+                    <li data-hebrew="⚠️ אי-ודאות גבוהה - חוסר במידע קריטי"><strong>⚠️ High uncertainty</strong> - Missing critical information</li>
+                    <li data-hebrew="💰 טעויות יקרות - מתגלות מאוחר מדי"><strong>💰 Expensive mistakes</strong> - Discovered too late in the process</li>
                 </ul>
             </div>
             
-            <h2 style="margin-top: 40px; text-align: center;">🌍 Massive Market Opportunity</h2>
+            <h2 style="margin-top: 40px; text-align: center;" data-hebrew="🌍 הזדמנות שוק עצומה">🌍 Massive Market Opportunity</h2>
             <div class="market-grid">
                 <div class="market-box">
-                    <h3 style="color: var(--bright-blue);">📈 PropTech Market</h3>
+                    <h3 style="color: var(--bright-blue);" data-hebrew="📈 שוק PropTech">📈 PropTech Market</h3>
                     <p style="font-size: 24px; margin: 15px 0;"><strong>$47B</strong> (2025) → <strong>$185B</strong> (2034)</p>
                     <p style="color: var(--emerald-green); font-weight: 600;">CAGR: 16-17%</p>
                 </div>
                 <div class="market-box">
-                    <h3 style="color: var(--bright-blue);">🎯 Target Customers</h3>
-                    <p style="font-size: 18px; margin-top: 15px;">Real estate developers, investors, and entrepreneurs worldwide seeking instant project clarity</p>
+                    <h3 style="color: var(--bright-blue);" data-hebrew="🎯 לקוחות יעד">🎯 Target Customers</h3>
+                    <p style="font-size: 18px; margin-top: 15px;" data-hebrew="יזמי נדל״ן, משקיעים ויזמים ברחבי העולם המחפשים בהירות מיידית לפרויקטים">Real estate developers, investors, and entrepreneurs worldwide seeking instant project clarity</p>
                 </div>
             </div>
         </div>
@@ -1219,27 +1337,27 @@
 
         <!-- Slide 4: How It Works -->
         <div class="slide">
-            <h1>🔄 How DAZ Works: Your Project Journey</h1>
+            <h1 data-hebrew="🔄 איך DAZ עובד: המסע של הפרויקט שלך">🔄 How DAZ Works: Your Project Journey</h1>
             
             <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="margin-bottom: 25px;">📋 Before the Project</h2>
-                <p style="font-size: 20px; line-height: 1.8;">
+                <h2 style="margin-bottom: 25px;" data-hebrew="📋 לפני הפרויקט">📋 Before the Project</h2>
+                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניתוח היתכנות מלא בדקות: כדאיות כלכלית, ודאות משפטית, התאמה לתכנון, ניתוח שוק, תחזיות פיננסיות, הערכת סיכונים">
                     <strong>Complete feasibility analysis in minutes:</strong> Economic viability, legal certainty, 
                     zoning compliance, market analysis, financial projections, risk assessment
                 </p>
             </div>
             
             <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="margin-bottom: 25px;">🚀 During the Project</h2>
-                <p style="font-size: 20px; line-height: 1.8;">
+                <h2 style="margin-bottom: 25px;" data-hebrew="🚀 במהלך הפרויקט">🚀 During the Project</h2>
+                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניטור רציף ותמיכה בהחלטות: אינטגרציית נתונים בזמן אמת, מעקב התקדמות אוטומטי, התראות סיכון, ניטור תקציב, ניהול לוחות זמנים">
                     <strong>Continuous monitoring & decision support:</strong> Real-time data integration, 
                     automated progress tracking, risk alerts, budget monitoring, timeline management
                 </p>
             </div>
             
             <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(119, 182, 234, 0.2), rgba(16, 185, 129, 0.1)); border-radius: 20px;">
-                <h2 style="margin-bottom: 20px;">⚡ The Result</h2>
-                <p style="font-size: 28px; font-weight: 700; line-height: 1.6;">
+                <h2 style="margin-bottom: 20px;" data-hebrew="⚡ התוצאה">⚡ The Result</h2>
+                <p style="font-size: 28px; font-weight: 700; line-height: 1.6;" data-hebrew="בהירות מיידית בכל שלב - החלטות טובות יותר, ביצוע מהיר יותר, סיכון מופחת">
                     Instant clarity at every stage<br/>
                     <span style="color: var(--emerald-green);">Better decisions, faster execution, reduced risk</span>
                 </p>
@@ -1248,68 +1366,68 @@
 
         <!-- Slide 5: Business Model + Segments -->
         <div class="slide">
-            <h1>💰 Business Model: Tiered Value Delivery</h1>
+            <h1 data-hebrew="💰 מודל עסקי: שכבות ערך">💰 Business Model: Tiered Value Delivery</h1>
             
             <div class="market-grid" style="grid-template-columns: repeat(3, 1fr); margin: 40px 0;">
                 <div class="connected-card" style="text-align: center;">
-                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;">Tier 1: Basic Rights Verification</h3>
+                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;" data-hebrew="שכבה 1: אימות זכויות בסיסי">Tier 1: Basic Rights Verification</h3>
                     <ul style="text-align: left; list-style: none; font-size: 17px; margin: 20px 0;">
-                        <li style="margin-bottom: 12px;">✅ Basic property rights check</li>
-                        <li style="margin-bottom: 12px;">✅ Legal entitlement verification</li>
-                        <li style="margin-bottom: 12px;">✅ Initial feasibility screening</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ בדיקת זכויות קניין בסיסית">✅ Basic property rights check</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ אימות זכאות משפטית">✅ Legal entitlement verification</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ סינון היתכנות ראשוני">✅ Initial feasibility screening</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);">Base Subscription</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);" data-hebrew="מנוי בסיסי">Base Subscription</p>
                 </div>
                 
                 <div class="connected-card" style="text-align: center; border: 3px solid var(--bright-blue); transform: scale(1.05);">
-                    <h3 style="color: var(--gold); margin-bottom: 20px;">⭐ Tier 2: Complete Financial Analysis</h3>
+                    <h3 style="color: var(--gold); margin-bottom: 20px;" data-hebrew="⭐ שכבה 2: ניתוח פיננסי מלא">⭐ Tier 2: Complete Financial Analysis</h3>
                     <ul style="text-align: left; list-style: none; font-size: 17px; margin: 20px 0;">
-                        <li style="margin-bottom: 12px;">✅ All Tier 1 features</li>
-                        <li style="margin-bottom: 12px;">✅ Full financial modeling (cash flow, ROI, IRR)</li>
-                        <li style="margin-bottom: 12px;">✅ Comprehensive economic feasibility</li>
-                        <li style="margin-bottom: 12px;">✅ Advanced financial projections</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ כל תכונות שכבה 1">✅ All Tier 1 features</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ מודלים פיננסיים מלאים (תזרים, ROI, IRR)">✅ Full financial modeling (cash flow, ROI, IRR)</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ בדיקת כדאיות כלכלית מקיפה">✅ Comprehensive economic feasibility</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ תחזיות פיננסיות מתקדמות">✅ Advanced financial projections</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 700; color: var(--gold);">Professional Plan</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: var(--gold);" data-hebrew="תוכנית מקצועית">Professional Plan</p>
                 </div>
                 
                 <div class="connected-card" style="text-align: center;">
-                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;">Tier 3: Full AGI Assistant</h3>
+                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;" data-hebrew="שכבה 3: עוזר AGI מלא">Tier 3: Full AGI Assistant</h3>
                     <ul style="text-align: left; list-style: none; font-size: 17px; margin: 20px 0;">
-                        <li style="margin-bottom: 12px;">✅ All Tier 2 features</li>
-                        <li style="margin-bottom: 12px;">✅ AI agent managing entire project lifecycle</li>
-                        <li style="margin-bottom: 12px;">✅ Automated project monitoring & execution</li>
-                        <li style="margin-bottom: 12px;">✅ Real-time decision support</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ כל תכונות שכבה 2">✅ All Tier 2 features</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ סוכן AI מנהל את כל מחזור חיי הפרויקט">✅ AI agent managing entire project lifecycle</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ ניטור וביצוע פרויקט אוטומטי">✅ Automated project monitoring & execution</li>
+                        <li style="margin-bottom: 12px;" data-hebrew="✅ תמיכה בהחלטות בזמן אמת">✅ Real-time decision support</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);">Enterprise + Per-Project</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);" data-hebrew="ארגוני + לפי פרויקט">Enterprise + Per-Project</p>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 20px;"><strong>Target Segments:</strong> Residential & Commercial Developers • Property Investors • Real Estate Agencies • Construction Firms</p>
+                <p style="font-size: 20px;" data-hebrew="פלחי יעד: יזמי מגורים ומסחר • משקיעי נדל״ן • סוכנויות נדל״ן • חברות בנייה"><strong>Target Segments:</strong> Residential & Commercial Developers • Property Investors • Real Estate Agencies • Construction Firms</p>
             </div>
         </div>
 
         <!-- Slide 6: Roadmap + Team -->
         <div class="slide">
-            <h1>🚀 Our Journey & Team</h1>
-            <p style="text-align: center; font-size: 18px; color: var(--warm-gray); margin-bottom: 35px;">
+            <h1 data-hebrew="🚀 המסע והצוות שלנו">🚀 Our Journey & Team</h1>
+            <p style="text-align: center; font-size: 18px; color: var(--warm-gray); margin-bottom: 35px;" data-hebrew="בונים את עתיד הנדל״ן עם הנהגה מומחית">
                 Building the future of real estate with expert leadership
             </p>
             
             <!-- Roadmap Section (Top) -->
             <div>
-                <h2 class="section-header">🗓️ Roadmap</h2>
+                <h2 class="section-header" data-hebrew="🗓️ מפת דרכים">🗓️ Roadmap</h2>
                 <div class="roadmap-section">
                     <div class="roadmap-card">
                         <div class="roadmap-card-header">
                             <span class="roadmap-card-icon">🚀</span>
                             <span class="roadmap-card-date">Q2 2026</span>
                         </div>
-                        <div class="roadmap-card-title">MVP Launch</div>
-                        <div class="roadmap-card-description">
+                        <div class="roadmap-card-title" data-hebrew="השקת MVP">MVP Launch</div>
+                        <div class="roadmap-card-description" data-hebrew="רשת סוכנים מרכזית + כלי ניתוח היתכנות">
                             Core agent network + Feasibility analysis tool
                         </div>
-                        <span class="roadmap-card-target">Target: 10-20 beta customers</span>
+                        <span class="roadmap-card-target" data-hebrew="יעד: 10-20 לקוחות בטא">Target: 10-20 beta customers</span>
                     </div>
                     
                     <div class="roadmap-card">
@@ -1317,11 +1435,11 @@
                             <span class="roadmap-card-icon">⚡</span>
                             <span class="roadmap-card-date">Q4 2026</span>
                         </div>
-                        <div class="roadmap-card-title">Full Platform</div>
-                        <div class="roadmap-card-description">
+                        <div class="roadmap-card-title" data-hebrew="פלטפורמה מלאה">Full Platform</div>
+                        <div class="roadmap-card-description" data-hebrew="מערכת סוכנים מלאה + לוח בקרה לניטור">
                             Complete agent ecosystem + Monitoring dashboard
                         </div>
-                        <span class="roadmap-card-target">Target: 50+ active customers</span>
+                        <span class="roadmap-card-target" data-hebrew="יעד: 50+ לקוחות פעילים">Target: 50+ active customers</span>
                     </div>
                     
                     <div class="roadmap-card">
@@ -1329,43 +1447,43 @@
                             <span class="roadmap-card-icon">🌟</span>
                             <span class="roadmap-card-date">2027</span>
                         </div>
-                        <div class="roadmap-card-title">Scale & Expand</div>
-                        <div class="roadmap-card-description">
+                        <div class="roadmap-card-title" data-hebrew="צמיחה והתרחבות">Scale & Expand</div>
+                        <div class="roadmap-card-description" data-hebrew="שווקים בינלאומיים + תכונות ארגוניות">
                             International markets + Enterprise features
                         </div>
-                        <span class="roadmap-card-target">Target: 200+ customers, $2-5M ARR</span>
+                        <span class="roadmap-card-target" data-hebrew="יעד: 200+ לקוחות, $2-5M ARR">Target: 200+ customers, $2-5M ARR</span>
                     </div>
                 </div>
             </div>
             
             <!-- Team Section (Bottom) -->
             <div>
-                <h2 class="section-header">👥 Founding Team</h2>
+                <h2 class="section-header" data-hebrew="👥 צוות מייסדים">👥 Founding Team</h2>
                 <div class="team-section">
                     <div class="team-card-horizontal">
                         <div class="team-card-avatar">AK</div>
                         <div class="team-card-name">Alpir Kritzler</div>
                         <div class="team-card-role">CEO</div>
-                        <div class="team-card-expertise">Tech & Product Strategy</div>
+                        <div class="team-card-expertise" data-hebrew="אסטרטגיית טכנולוגיה ומוצר">Tech & Product Strategy</div>
                     </div>
                     
                     <div class="team-card-horizontal">
                         <div class="team-card-avatar">OZ</div>
                         <div class="team-card-name">Or Zelniker</div>
                         <div class="team-card-role">CRO</div>
-                        <div class="team-card-expertise">Real Estate & Legal Expertise</div>
+                        <div class="team-card-expertise" data-hebrew="מומחיות בנדל״ן ומשפטים">Real Estate & Legal Expertise</div>
                     </div>
                     
                     <div class="team-card-horizontal">
                         <div class="team-card-avatar">DP</div>
                         <div class="team-card-name">Dor Perez</div>
                         <div class="team-card-role">CTO</div>
-                        <div class="team-card-expertise">AI/AGI Technology</div>
+                        <div class="team-card-expertise" data-hebrew="טכנולוגיית AI/AGI">AI/AGI Technology</div>
                     </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 24px; padding: 14px; background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05)); border-radius: 12px;">
-                    <p style="font-size: 13px; color: var(--warm-gray); line-height: 1.5;">
+                    <p style="font-size: 13px; color: var(--warm-gray); line-height: 1.5;" data-hebrew="מומחיות עמוקה בנדל״ן, משפטים ובינה מלאכותית">
                         <strong style="color: var(--bright-blue);">Deep expertise</strong> across Real Estate, Law, and AI
                     </p>
                 </div>
@@ -1374,42 +1492,42 @@
 
         <!-- Slide 7: The Ask -->
         <div class="slide" style="justify-content: flex-start; padding: 45px 80px 50px 80px;">
-            <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 36px;">🚀 Join Us: Building the Future</h1>
+            <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 36px;" data-hebrew="🚀 הצטרפו אלינו: בונים את העתיד">🚀 Join Us: Building the Future</h1>
             
             <div class="ask-amount" style="margin: 15px 0;">
                 <div class="amount" style="font-size: 56px;">$2M</div>
-                <p style="font-size: 22px; font-weight: 600; margin: 0;">Funding Round</p>
+                <p style="font-size: 22px; font-weight: 600; margin: 0;" data-hebrew="סבב גיוס">Funding Round</p>
             </div>
             
             <div class="funding-grid" style="margin: 18px 0; gap: 16px;">
                 <div class="funding-item" style="padding: 16px;">
                     <div class="funding-percentage" style="font-size: 28px; margin-bottom: 5px;">45%</div>
-                    <h3 style="font-size: 16px; margin-bottom: 6px;">🔧 Tech Development</h3>
-                    <p style="font-size: 13px; margin: 0;">Complete agent network, platform infrastructure</p>
+                    <h3 style="font-size: 16px; margin-bottom: 6px;" data-hebrew="🔧 פיתוח טכנולוגי">🔧 Tech Development</h3>
+                    <p style="font-size: 13px; margin: 0;" data-hebrew="רשת סוכנים מלאה, תשתית פלטפורמה">Complete agent network, platform infrastructure</p>
                 </div>
                 
                 <div class="funding-item" style="padding: 16px;">
                     <div class="funding-percentage" style="font-size: 28px; margin-bottom: 5px;">10%</div>
-                    <h3 style="font-size: 16px; margin-bottom: 6px;">🤝 Data Partnerships</h3>
-                    <p style="font-size: 13px; margin: 0;">Legal data, government APIs, market data</p>
+                    <h3 style="font-size: 16px; margin-bottom: 6px;" data-hebrew="🤝 שותפויות נתונים">🤝 Data Partnerships</h3>
+                    <p style="font-size: 13px; margin: 0;" data-hebrew="נתונים משפטיים, ממשקי ממשלה, נתוני שוק">Legal data, government APIs, market data</p>
                 </div>
                 
                 <div class="funding-item" style="padding: 16px;">
                     <div class="funding-percentage" style="font-size: 28px; margin-bottom: 5px;">20%</div>
-                    <h3 style="font-size: 16px; margin-bottom: 6px;">👥 Team Expansion</h3>
-                    <p style="font-size: 13px; margin: 0;">Engineering, sales, customer success</p>
+                    <h3 style="font-size: 16px; margin-bottom: 6px;" data-hebrew="👥 הרחבת הצוות">👥 Team Expansion</h3>
+                    <p style="font-size: 13px; margin: 0;" data-hebrew="הנדסה, מכירות, הצלחת לקוחות">Engineering, sales, customer success</p>
                 </div>
                 
                 <div class="funding-item" style="padding: 16px;">
                     <div class="funding-percentage" style="font-size: 28px; margin-bottom: 5px;">25%</div>
-                    <h3 style="font-size: 16px; margin-bottom: 6px;">📣 Go-to-Market</h3>
-                    <p style="font-size: 13px; margin: 0;">Marketing, customer acquisition, partnerships</p>
+                    <h3 style="font-size: 16px; margin-bottom: 6px;" data-hebrew="📣 יציאה לשוק">📣 Go-to-Market</h3>
+                    <p style="font-size: 13px; margin: 0;" data-hebrew="שיווק, רכישת לקוחות, שותפויות">Marketing, customer acquisition, partnerships</p>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 20px;">
-                <h2 style="margin-bottom: 12px; font-size: 24px;">⚡ Transform Real Estate Development</h2>
-                <p style="font-size: 20px; line-height: 1.5; margin: 0;">
+                <h2 style="margin-bottom: 12px; font-size: 24px;" data-hebrew="⚡ לשנות את עולם פיתוח הנדל״ן">⚡ Transform Real Estate Development</h2>
+                <p style="font-size: 20px; line-height: 1.5; margin: 0;" data-hebrew="משבועות של אי-ודאות לדקות של בהירות">
                     From weeks of uncertainty
                     <span style="color: var(--emerald-green); font-weight: 700;"> to minutes of clarity</span>
                 </p>
@@ -1626,18 +1744,36 @@
 
         function toggleLanguage() {
             isHebrew = !isHebrew;
+            
+            // Update document direction and language
+            document.documentElement.dir = isHebrew ? 'rtl' : 'ltr';
+            document.documentElement.lang = isHebrew ? 'he' : 'en';
+            
+            // Toggle text content
             document.querySelectorAll('[data-hebrew]').forEach(el => {
                 if (isHebrew) {
                     if (!el.dataset.original) {
-                        el.dataset.original = el.textContent;
+                        el.dataset.original = el.innerHTML;
                     }
                     el.textContent = el.dataset.hebrew;
                 } else {
                     if (el.dataset.original) {
-                        el.textContent = el.dataset.original;
+                        el.innerHTML = el.dataset.original;
                     }
                 }
             });
+            
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            if (isHebrew) {
+                prevBtn.textContent = 'הקודם →';
+                nextBtn.textContent = '← הבא';
+            } else {
+                prevBtn.textContent = '← Previous';
+                nextBtn.textContent = 'Next →';
+            }
+            
             document.getElementById('translate-btn').textContent = isHebrew ? 'English' : 'עברית';
         }
 
