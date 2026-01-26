@@ -1138,8 +1138,24 @@
             /* Cards */
             .connected-card {
                 padding: 16px;
-                margin: 12px 0;
+                margin: 12px 0 !important;
                 border-radius: 16px;
+            }
+            
+            .connected-card h2 {
+                font-size: 18px !important;
+                margin-bottom: 15px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .connected-card ul {
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+                padding-left: 20px;
+            }
+            
+            .connected-card li {
+                margin-bottom: 8px;
             }
             
             .roadmap-card, .team-card-horizontal {
@@ -1307,7 +1323,24 @@
             
             .connected-card {
                 padding: 12px;
+                margin: 10px 0 !important;
                 border-radius: 12px;
+            }
+            
+            .connected-card h2 {
+                font-size: 16px !important;
+                margin-bottom: 12px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .connected-card ul {
+                font-size: 13px !important;
+                line-height: 1.4 !important;
+                padding-left: 18px;
+            }
+            
+            .connected-card li {
+                margin-bottom: 6px;
             }
             
             .nav-btn {
@@ -1471,6 +1504,18 @@
             html[dir="rtl"] .export-btn {
                 right: 12px;
                 left: auto;
+            }
+            
+            html[dir="rtl"] .connected-card ul {
+                padding-right: 20px;
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html[dir="rtl"] .connected-card ul {
+                padding-right: 18px;
+                padding-left: 0;
             }
         }
 
