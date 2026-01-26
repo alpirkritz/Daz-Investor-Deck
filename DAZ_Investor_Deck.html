@@ -1099,40 +1099,56 @@
                 height: 70px;
             }
             
-            /* Network Visualization */
+            /* Network Visualization - Better mobile layout */
             .network-container { 
-                height: 280px;
-                margin: 15px 0;
+                height: 350px;
+                margin: 20px 0;
+                width: 100%;
             }
             
             .network-center {
-                width: 90px;
-                height: 90px;
+                width: 100px;
+                height: 100px;
                 border: 2px solid var(--bright-blue);
             }
             
             .network-center-text {
-                font-size: 14px;
+                font-size: 15px;
             }
             
             .network-node {
-                width: 70px;
-                height: 70px;
+                width: 75px;
+                height: 75px;
                 padding: 8px;
             }
             
             .network-node-icon {
-                font-size: 18px;
+                font-size: 20px;
                 margin-bottom: 3px;
             }
             
             .network-node-title {
-                font-size: 9px;
+                font-size: 9.5px;
                 line-height: 1.1;
             }
             
             .network-line {
                 height: 2px;
+            }
+            
+            /* Adjust subtitle paragraph on network slide */
+            .slide p[style*="font-size: 24px"] {
+                font-size: 16px !important;
+                margin-bottom: 20px !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* Adjust tagline at bottom of network slide */
+            .slide p[style*="font-size: 22px"] {
+                font-size: 15px !important;
+                margin-top: 20px !important;
+                line-height: 1.5 !important;
+                padding: 0 10px;
             }
             
             /* Cards */
@@ -1295,30 +1311,45 @@
             }
             
             .network-container { 
-                height: 240px;
+                height: 300px;
+                margin: 15px 0;
+                width: 100%;
             }
             
             .network-center {
-                width: 70px;
-                height: 70px;
+                width: 85px;
+                height: 85px;
             }
             
             .network-center-text {
-                font-size: 11px;
+                font-size: 13px;
             }
             
             .network-node {
-                width: 55px;
-                height: 55px;
+                width: 65px;
+                height: 65px;
                 padding: 6px;
             }
             
             .network-node-icon {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .network-node-title {
-                font-size: 8px;
+                font-size: 8.5px;
+            }
+            
+            /* Adjust subtitle on small mobile */
+            .slide p[style*="font-size: 24px"] {
+                font-size: 14px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            /* Adjust tagline on small mobile */
+            .slide p[style*="font-size: 22px"] {
+                font-size: 13px !important;
+                margin-top: 15px !important;
+                padding: 0 8px;
             }
             
             .connected-card {
