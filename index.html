@@ -1016,12 +1016,321 @@
             .team-grid { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 768px) {
-            .slide { padding: 30px 25px; }
-            .slide h1 { font-size: 32px; }
-            .title-slide h1 { font-size: 48px; }
+        /* Tablet Optimization */
+        @media (max-width: 1024px) {
+            .slide { padding: 40px 30px; }
+            .slide h1 { font-size: 36px; }
+            .slide h2 { font-size: 24px; }
+            .slide h3 { font-size: 18px; }
             .slide p, .slide li { font-size: 16px; }
-            .market-grid, .funding-grid { grid-template-columns: 1fr; }
+            
+            .title-slide h1 { font-size: 72px; letter-spacing: 12px; }
+            .title-slide .subtitle { font-size: 22px; }
+            .title-slide .tagline { font-size: 18px; }
+            
+            .roadmap-section, .team-section { 
+                grid-template-columns: 1fr; 
+                gap: 16px;
+            }
+            
+            .market-grid { grid-template-columns: 1fr; }
+            
+            .navigation { 
+                bottom: 20px;
+                right: 20px;
+                gap: 8px;
+            }
+            
+            .slide-counter {
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .slide { 
+                padding: 24px 16px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .slide h1 { 
+                font-size: 28px;
+                letter-spacing: -0.5px;
+                margin-bottom: 12px;
+            }
+            
+            .slide h2 { 
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .slide h3 { 
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .slide p, .slide li { 
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 6px;
+            }
+            
+            .title-slide h1 { 
+                font-size: 48px;
+                letter-spacing: 8px;
+            }
+            
+            .title-slide .subtitle { 
+                font-size: 18px;
+                line-height: 1.4;
+            }
+            
+            .title-slide .tagline { 
+                font-size: 14px;
+                letter-spacing: 0.5px;
+            }
+            
+            .daz-logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            /* Network Visualization */
+            .network-container { 
+                height: 280px;
+                margin: 15px 0;
+            }
+            
+            .network-center {
+                width: 90px;
+                height: 90px;
+                border: 2px solid var(--bright-blue);
+            }
+            
+            .network-center-text {
+                font-size: 14px;
+            }
+            
+            .network-node {
+                width: 70px;
+                height: 70px;
+                padding: 8px;
+            }
+            
+            .network-node-icon {
+                font-size: 18px;
+                margin-bottom: 3px;
+            }
+            
+            .network-node-title {
+                font-size: 9px;
+                line-height: 1.1;
+            }
+            
+            .network-line {
+                height: 2px;
+            }
+            
+            /* Cards */
+            .connected-card {
+                padding: 16px;
+                margin: 12px 0;
+                border-radius: 16px;
+            }
+            
+            .roadmap-card, .team-card-horizontal {
+                padding: 16px;
+                min-height: 150px;
+            }
+            
+            /* Grids */
+            .market-grid, .funding-grid, .roadmap-section, .team-section { 
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            /* Navigation - Touch Optimized */
+            .navigation {
+                bottom: 12px;
+                right: 12px;
+                left: 12px;
+                justify-content: space-between;
+                gap: 8px;
+            }
+            
+            .nav-btn {
+                flex: 1;
+                padding: 12px 20px;
+                font-size: 15px;
+                min-height: 44px;
+                border-radius: 12px;
+            }
+            
+            /* Slide Counter */
+            .slide-counter {
+                top: 12px;
+                right: 12px;
+                padding: 8px 16px;
+                font-size: 13px;
+                border-radius: 16px;
+            }
+            
+            .slide-counter #current-slide {
+                font-size: 15px;
+            }
+            
+            /* Control Buttons - Touch Optimized */
+            .translate-btn, .export-btn {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 10px 14px;
+                font-size: 12px;
+                border-radius: 10px;
+            }
+            
+            .translate-btn {
+                top: 12px;
+                right: 12px;
+            }
+            
+            .export-btn {
+                top: 12px;
+                left: 12px;
+            }
+            
+            /* Team Avatars */
+            .team-card-avatar {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 12px;
+            }
+            
+            .team-card-name {
+                font-size: 16px;
+            }
+            
+            .team-card-role {
+                font-size: 13px;
+            }
+            
+            .team-card-expertise {
+                font-size: 11px;
+            }
+            
+            /* Funding */
+            .funding-percentage {
+                font-size: 24px;
+            }
+            
+            .ask-amount .amount {
+                font-size: 36px;
+            }
+            
+            .ask-amount {
+                padding: 16px 20px;
+                margin: 10px 0;
+            }
+        }
+        
+        /* Small Mobile Optimization */
+        @media (max-width: 480px) {
+            .slide { 
+                padding: 16px 12px;
+            }
+            
+            .slide h1 { 
+                font-size: 24px;
+                letter-spacing: -0.5px;
+            }
+            
+            .slide h2 { 
+                font-size: 18px;
+            }
+            
+            .slide h3 { 
+                font-size: 15px;
+            }
+            
+            .slide p, .slide li { 
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            
+            .title-slide h1 { 
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+            
+            .title-slide .subtitle { 
+                font-size: 16px;
+            }
+            
+            .title-slide .tagline { 
+                font-size: 13px;
+            }
+            
+            .daz-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .network-container { 
+                height: 240px;
+            }
+            
+            .network-center {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .network-center-text {
+                font-size: 11px;
+            }
+            
+            .network-node {
+                width: 55px;
+                height: 55px;
+                padding: 6px;
+            }
+            
+            .network-node-icon {
+                font-size: 16px;
+            }
+            
+            .network-node-title {
+                font-size: 8px;
+            }
+            
+            .connected-card {
+                padding: 12px;
+                border-radius: 12px;
+            }
+            
+            .nav-btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .slide-counter {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .slide-counter #current-slide {
+                font-size: 14px;
+            }
+            
+            .ask-amount .amount {
+                font-size: 32px;
+            }
+            
+            .funding-percentage {
+                font-size: 20px;
+            }
         }
 
         /* RTL Support */
@@ -1140,6 +1449,29 @@
 
         html[dir="rtl"] .section-header {
             text-align: center;
+        }
+
+        /* RTL Mobile Support */
+        @media (max-width: 768px) {
+            html[dir="rtl"] .navigation {
+                left: 12px;
+                right: 12px;
+            }
+            
+            html[dir="rtl"] .slide-counter {
+                left: 12px;
+                right: auto;
+            }
+            
+            html[dir="rtl"] .translate-btn {
+                left: 12px;
+                right: auto;
+            }
+            
+            html[dir="rtl"] .export-btn {
+                right: 12px;
+                left: auto;
+            }
         }
 
         @media print {
@@ -1621,6 +1953,43 @@
                 previousSlide();
             }
         });
+
+        // Touch/Swipe navigation for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        const swipeThreshold = 50; // minimum distance for swipe
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            
+            // Check if horizontal swipe is more significant than vertical
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                // Horizontal swipe
+                if (Math.abs(deltaX) > swipeThreshold) {
+                    if (deltaX > 0) {
+                        // Swipe right - previous slide
+                        previousSlide();
+                    } else {
+                        // Swipe left - next slide
+                        nextSlide();
+                    }
+                }
+            }
+        }
 
         // Create particles
         function createParticles() {
