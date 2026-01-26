@@ -1148,6 +1148,50 @@
                 padding: 10px 16px;
                 font-size: 14px;
             }
+            
+            /* Timeline Horizontal - Tablet */
+            .timeline-card-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .timeline-horizontal-line {
+                display: none;
+            }
+            
+            .timeline-phase-card {
+                min-height: 200px;
+                padding: 24px 20px;
+            }
+            
+            .timeline-phase-icon {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+            
+            .timeline-phase-card h3 {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+            
+            .timeline-phase-card p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            
+            .timeline-result-box {
+                margin-top: 32px;
+                padding: 24px;
+            }
+            
+            .timeline-result-box h2 {
+                font-size: 24px;
+                margin-bottom: 14px;
+            }
+            
+            .timeline-result-box p {
+                font-size: 19px;
+            }
         }
 
         /* Mobile Optimization */
@@ -1367,6 +1411,52 @@
                 padding: 16px 20px;
                 margin: 10px 0;
             }
+            
+            /* Timeline Horizontal - Mobile */
+            .timeline-horizontal {
+                margin: 24px 0;
+            }
+            
+            .timeline-card-container {
+                gap: 16px;
+            }
+            
+            .timeline-phase-card {
+                min-height: 180px;
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+            
+            .timeline-phase-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+            
+            .timeline-phase-card h3 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .timeline-phase-card p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .timeline-result-box {
+                margin-top: 24px;
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+            
+            .timeline-result-box h2 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .timeline-result-box p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
         }
         
         /* Small Mobile Optimization */
@@ -1496,6 +1586,217 @@
             .funding-percentage {
                 font-size: 20px;
             }
+            
+            /* Timeline Horizontal - Small Mobile */
+            .timeline-horizontal {
+                margin: 20px 0;
+            }
+            
+            .timeline-card-container {
+                gap: 12px;
+            }
+            
+            .timeline-phase-card {
+                min-height: 160px;
+                padding: 16px 12px;
+                border-radius: 12px;
+            }
+            
+            .timeline-phase-icon {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
+            
+            .timeline-phase-card h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .timeline-phase-card p {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            
+            .timeline-result-box {
+                margin-top: 20px;
+                padding: 16px 12px;
+                border-radius: 12px;
+            }
+            
+            .timeline-result-box h2 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            
+            .timeline-result-box p {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+
+        /* Timeline Horizontal Styles */
+        .timeline-horizontal {
+            position: relative;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .timeline-horizontal-line {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bright-blue) 0%, var(--emerald-green) 50%, var(--bright-blue) 100%);
+            transform: translateY(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            animation: lineGlow 3s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes lineGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+                opacity: 0.8;
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(13, 148, 136, 0.4);
+                opacity: 1;
+            }
+        }
+
+        .timeline-card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-phase-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(13, 148, 136, 0.08));
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            border-radius: 24px;
+            padding: 32px 24px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+        }
+
+        .timeline-phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bright-blue), var(--emerald-green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .timeline-phase-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 24px 60px rgba(59, 130, 246, 0.4);
+            border-color: var(--bright-blue);
+        }
+
+        .timeline-phase-card:hover::before {
+            opacity: 1;
+        }
+
+        .timeline-phase-card.phase-before {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .timeline-phase-card.phase-during {
+            border-color: rgba(59, 130, 246, 0.7);
+        }
+
+        .timeline-phase-card.phase-after {
+            border-color: rgba(13, 148, 136, 0.6);
+        }
+
+        .timeline-phase-card.phase-after:hover {
+            border-color: var(--emerald-green);
+        }
+
+        .timeline-phase-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            text-align: center;
+            filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .timeline-phase-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 16px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .timeline-phase-card p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--warm-gray);
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .timeline-result-box {
+            text-align: center;
+            margin-top: 40px;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(13, 148, 136, 0.15));
+            border: 2px solid var(--bright-blue);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-result-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bright-blue), var(--emerald-green), var(--gold));
+        }
+
+        .timeline-result-box h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--bright-blue) 0%, var(--emerald-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-result-box p {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.6;
+            color: var(--text-white);
+        }
+
+        .timeline-result-box .highlight {
+            color: var(--emerald-green);
+            font-weight: 700;
         }
 
         /* RTL Support */
@@ -1613,6 +1914,23 @@
         }
 
         html[dir="rtl"] .section-header {
+            text-align: center;
+        }
+
+        /* RTL Support - Timeline Horizontal */
+        html[dir="rtl"] .timeline-phase-card {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .timeline-phase-card p {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .timeline-phase-icon {
+            text-align: center;
+        }
+
+        html[dir="rtl"] .timeline-result-box {
             text-align: center;
         }
 
@@ -1858,35 +2176,51 @@
         <div class="slide">
             <h1 data-hebrew="🔄 איך DAZ עובד: המסע של הפרויקט שלך">🔄 How DAZ Works: Your Project Journey</h1>
             
-            <div class="connected-card" style="margin: 18px 0;">
-                <h2 style="margin-bottom: 20px;" data-hebrew="📋 לפני הפרויקט">📋 Before the Project</h2>
-                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניתוח היתכנות מלא בדקות: כדאיות כלכלית, ודאות משפטית, התאמה לתכנון, ניתוח שוק, תחזיות פיננסיות, הערכת סיכונים">
-                    <strong>Complete feasibility analysis in minutes:</strong> Economic viability, legal certainty, 
-                    zoning compliance, market analysis, financial projections, risk assessment
-                </p>
+            <!-- Timeline Horizontal Container -->
+            <div class="timeline-horizontal">
+                <!-- Timeline Line -->
+                <div class="timeline-horizontal-line"></div>
+                
+                <!-- Timeline Cards Container -->
+                <div class="timeline-card-container">
+                    <!-- Card 1: Before the Project -->
+                    <div class="timeline-phase-card phase-before">
+                        <div class="timeline-phase-icon">🔍</div>
+                        <h3 data-hebrew="לפני הפרויקט">Before the Project</h3>
+                        <p data-hebrew="ניתוח היתכנות מלא בדקות: כדאיות כלכלית, ודאות משפטית, התאמה לתכנון, ניתוח שוק, תחזיות פיננסיות, הערכת סיכונים">
+                            <strong>Complete feasibility analysis in minutes:</strong> Economic viability, legal certainty, 
+                            zoning compliance, market analysis, financial projections, risk assessment
+                        </p>
+                    </div>
+                    
+                    <!-- Card 2: During the Project -->
+                    <div class="timeline-phase-card phase-during">
+                        <div class="timeline-phase-icon">⚡</div>
+                        <h3 data-hebrew="במהלך הפרויקט">During the Project</h3>
+                        <p data-hebrew="ניטור רציף ותמיכה בהחלטות: אינטגרציית נתונים בזמן אמת, מעקב התקדמות אוטומטי, התראות סיכון, ניטור תקציב, ניהול לוחות זמנים">
+                            <strong>Continuous monitoring & decision support:</strong> Real-time data integration, 
+                            automated progress tracking, risk alerts, budget monitoring, timeline management
+                        </p>
+                    </div>
+                    
+                    <!-- Card 3: After the Project -->
+                    <div class="timeline-phase-card phase-after">
+                        <div class="timeline-phase-icon">✅</div>
+                        <h3 data-hebrew="אחרי הפרויקט">After the Project</h3>
+                        <p data-hebrew="תיעוד ולמידה: דוחות סגירה, תובנות לביצועים, ארכיון מסמכים, לקחים לפרויקטים עתידיים, עדכון תבניות וערכות ערכים">
+                            <strong>Documentation & learning:</strong> Close-out reports, performance insights, document archive, 
+                            lessons learned for future projects, template and benchmark updates
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            <div class="connected-card" style="margin: 18px 0;">
-                <h2 style="margin-bottom: 20px;" data-hebrew="🚀 במהלך הפרויקט">🚀 During the Project</h2>
-                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניטור רציף ותמיכה בהחלטות: אינטגרציית נתונים בזמן אמת, מעקב התקדמות אוטומטי, התראות סיכון, ניטור תקציב, ניהול לוחות זמנים">
-                    <strong>Continuous monitoring & decision support:</strong> Real-time data integration, 
-                    automated progress tracking, risk alerts, budget monitoring, timeline management
-                </p>
-            </div>
-            
-            <div class="connected-card" style="margin: 18px 0;">
-                <h2 style="margin-bottom: 20px;" data-hebrew="📁 אחרי הפרויקט">📁 After the Project</h2>
-                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="תיעוד ולמידה: דוחות סגירה, תובנות לביצועים, ארכיון מסמכים, לקחים לפרויקטים עתידיים, עדכון תבניות וערכות ערכים">
-                    <strong>Documentation & learning:</strong> Close-out reports, performance insights, document archive, 
-                    lessons learned for future projects, template and benchmark updates
-                </p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(13, 148, 136, 0.1)); border-radius: 20px;">
-                <h2 style="margin-bottom: 20px;" data-hebrew="⚡ התוצאה">⚡ The Result</h2>
-                <p style="font-size: 28px; font-weight: 700; line-height: 1.6;" data-hebrew="בהירות מיידית בכל שלב - החלטות טובות יותר, ביצוע מהיר יותר, סיכון מופחת">
+            <!-- Result Box -->
+            <div class="timeline-result-box">
+                <h2 data-hebrew="⚡ התוצאה">⚡ The Result</h2>
+                <p data-hebrew="בהירות מיידית בכל שלב - החלטות טובות יותר, ביצוע מהיר יותר, סיכון מופחת">
                     Instant clarity at every stage<br/>
-                    <span style="color: var(--emerald-green);">Better decisions, faster execution, reduced risk</span>
+                    <span class="highlight">Better decisions, faster execution, reduced risk</span>
                 </p>
             </div>
         </div>
