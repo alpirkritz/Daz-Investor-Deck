@@ -2064,10 +2064,11 @@
                     
                     network.insertBefore(line, center); // Insert before center so lines are behind nodes
                     
-                    // Add data pulses (center→node) with staggered timing for clearer data flow
-                    const pulseInterval = setInterval(() => {
+                    // Add bidirectional data pulses for two-way communication
+                    // Outbound pulses: center → node (DAZ sending data)
+                    const outboundInterval = setInterval(() => {
                         if (!network.contains(center)) {
-                            clearInterval(pulseInterval);
+                            clearInterval(outboundInterval);
                             return;
                         }
                         
@@ -2083,6 +2084,28 @@
                             if (pulse.parentNode) pulse.remove();
                         }, 2100);
                     }, 1600 + index * 280);
+                    
+                    // Inbound pulses: node → center (agents sending data back to DAZ)
+                    const inboundInterval = setInterval(() => {
+                        if (!network.contains(center)) {
+                            clearInterval(inboundInterval);
+                            return;
+                        }
+                        
+                        const pulse = document.createElement('div');
+                        pulse.className = 'data-pulse';
+                        // Start from node position
+                        pulse.style.left = endX + 'px';
+                        pulse.style.top = endY + 'px';
+                        // Move back to center (reverse direction)
+                        pulse.style.setProperty('--dx', (startX - endX) + 'px');
+                        pulse.style.setProperty('--dy', (startY - endY) + 'px');
+                        network.appendChild(pulse);
+                        
+                        setTimeout(() => {
+                            if (pulse.parentNode) pulse.remove();
+                        }, 2100);
+                    }, 2400 + index * 280); // Offset timing so inbound follows outbound
                 });
             }, 200);
         }
