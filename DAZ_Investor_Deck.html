@@ -14,16 +14,18 @@
         }
 
         :root {
-            --navy-blue: #0D2A4A;
-            --deep-charcoal: #1A1F2E;
-            --sky-blue: #77B6EA;
-            --bright-blue: #4A9FFF;
-            --emerald-green: #10B981;
-            --electric-blue: #2E7FE6;
-            --gold: #D4AF37;
-            --warm-gray: #EBEFF2;
-            --text-white: #FFFFFF;
-            --text-muted: #9CA3AF;
+            --navy-blue: #1e3a5f;
+            --deep-charcoal: #2c3e50;
+            --steel-blue: #4a6fa5;
+            --bright-blue: #3b82f6;
+            --electric-blue: #4a6fa5;
+            --emerald-green: #0d9488;
+            --accent-teal: #0d9488;
+            --gold: #0d9488;
+            --slate-gray: #64748b;
+            --warm-gray: #e2e8f0;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
         }
 
         body {
@@ -49,10 +51,10 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: rgba(119, 182, 234, 0.6);
+            background: rgba(59, 130, 246, 0.5);
             border-radius: 50%;
             animation: float 20s infinite linear;
-            box-shadow: 0 0 10px rgba(119, 182, 234, 0.8);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
         }
         
         @keyframes float {
@@ -77,9 +79,9 @@
             top: 0;
             left: 0;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(119, 182, 234, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
-                linear-gradient(135deg, #000000 0%, #0a0e1a 30%, #0d1929 60%, #000000 100%);
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(13, 148, 136, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
             overflow-y: auto;
             animation: slideEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             box-sizing: border-box;
@@ -151,7 +153,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(0deg, transparent 0px, rgba(119, 182, 234, 0.03) 1px, transparent 2px, transparent 100px);
+            background: repeating-linear-gradient(0deg, transparent 0px, rgba(59, 130, 246, 0.02) 1px, transparent 2px, transparent 100px);
             animation: gridPulse 4s ease-in-out infinite;
             z-index: 0;
         }
@@ -164,7 +166,7 @@
             transform: translate(-50%, -50%);
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(119, 182, 234, 0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
             animation: pulse 3s ease-in-out infinite;
             z-index: 0;
         }
@@ -192,7 +194,7 @@
         .daz-logo {
             width: 100px;
             height: 100px;
-            filter: drop-shadow(0 0 30px rgba(119, 182, 234, 0.6));
+            filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6));
             animation: logoGlow 4s ease-in-out infinite;
         }
 
@@ -202,8 +204,8 @@
         }
 
         @keyframes logoGlow {
-            0%, 100% { filter: drop-shadow(0 0 30px rgba(119, 182, 234, 0.6)); }
-            50% { filter: drop-shadow(0 0 35px rgba(119, 182, 234, 0.8)) drop-shadow(0 0 50px rgba(16, 185, 129, 0.6)); }
+            0%, 100% { filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6)); }
+            50% { filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 50px rgba(13, 148, 136, 0.6)); }
         }
 
         .title-slide h1 {
@@ -219,8 +221,8 @@
         }
         
         @keyframes titleGlow {
-            0%, 100% { filter: drop-shadow(0 0 20px rgba(119, 182, 234, 0.6)); }
-            50% { filter: drop-shadow(0 0 35px rgba(119, 182, 234, 0.8)) drop-shadow(0 0 50px rgba(16, 185, 129, 0.6)); }
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
+            50% { filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 50px rgba(13, 148, 136, 0.6)); }
         }
 
         .title-slide .subtitle {
@@ -258,7 +260,7 @@
             transform: translate(-50%, -50%);
             width: 140px;
             height: 140px;
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.3), rgba(16, 185, 129, 0.2));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(13, 148, 136, 0.2));
             border-radius: 50%;
             border: 3px solid var(--bright-blue);
             display: flex;
@@ -266,12 +268,12 @@
             justify-content: center;
             z-index: 10;
             animation: centerPulse 2s ease-in-out infinite;
-            box-shadow: 0 0 60px rgba(119, 182, 234, 0.6);
+            box-shadow: 0 0 60px rgba(59, 130, 246, 0.6);
         }
 
         @keyframes centerPulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 60px rgba(119, 182, 234, 0.6); }
-            50% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 80px rgba(119, 182, 234, 0.8); }
+            0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 60px rgba(59, 130, 246, 0.6); }
+            50% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 80px rgba(59, 130, 246, 0.8); }
         }
 
         .network-center-text {
@@ -286,9 +288,9 @@
             position: absolute;
             width: 110px;
             height: 110px;
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.2), rgba(16, 185, 129, 0.1));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(13, 148, 136, 0.1));
             border-radius: 50%;
-            border: 2px solid rgba(119, 182, 234, 0.5);
+            border: 2px solid rgba(59, 130, 246, 0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -303,8 +305,8 @@
         .network-node:hover {
             transform: scale(1.15);
             border-color: var(--bright-blue);
-            box-shadow: 0 0 40px rgba(119, 182, 234, 0.6);
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.3), rgba(16, 185, 129, 0.2));
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(13, 148, 136, 0.2));
             z-index: 100;
         }
 
@@ -327,56 +329,44 @@
 
         .network-line {
             position: absolute;
-            border-top: 2px dashed rgba(119, 182, 234, 0.8);
-            height: 0;
+            height: 3px;
             transform-origin: left center;
-            animation: lineGlow 2s ease-in-out infinite;
-            opacity: 0.8;
             z-index: 1;
-            box-shadow: 0 0 6px rgba(119, 182, 234, 0.4);
+            background: linear-gradient(90deg, var(--bright-blue) 0%, var(--emerald-green) 60%, var(--bright-blue) 100%);
+            background-size: 200% 100%;
+            animation: lineFlow 2.5s ease-in-out infinite;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            opacity: 0.95;
         }
 
-        @keyframes lineGlow {
-            0%, 100% { 
-                opacity: 0.6; 
-                box-shadow: 0 0 6px rgba(119, 182, 234, 0.3);
-            }
-            50% { 
-                opacity: 1; 
-                box-shadow: 0 0 12px rgba(119, 182, 234, 0.7), 0 0 20px rgba(16, 185, 129, 0.4);
-            }
+        @keyframes lineFlow {
+            0%, 100% { background-position: 0% 50%; opacity: 0.9; }
+            50% { background-position: 100% 50%; opacity: 1; box-shadow: 0 0 14px rgba(59, 130, 246, 0.7); }
         }
 
         .data-pulse {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: var(--bright-blue);
             border-radius: 50%;
-            animation: dataPulse 2.5s linear infinite;
-            box-shadow: 0 0 15px var(--bright-blue), 0 0 25px rgba(119, 182, 234, 0.8);
+            animation: dataPulse 2s linear infinite;
+            box-shadow: 0 0 18px var(--bright-blue), 0 0 30px rgba(59, 130, 246, 0.7);
             z-index: 6;
+            border: 2px solid rgba(255,255,255,0.5);
         }
 
         @keyframes dataPulse {
-            0% { 
-                transform: translate(0, 0) scale(1); 
-                opacity: 1; 
-            }
-            50% {
-                transform: translate(calc(var(--dx) * 0.5), calc(var(--dy) * 0.5)) scale(1.3);
-                opacity: 0.8;
-            }
-            100% { 
-                transform: translate(var(--dx), var(--dy)) scale(0.8); 
-                opacity: 0; 
-            }
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            40% { transform: translate(calc(var(--dx) * 0.5), calc(var(--dy) * 0.5)) scale(1.2); opacity: 0.9; }
+            100% { transform: translate(var(--dx), var(--dy)) scale(0.6); opacity: 0; }
         }
 
         /* Cards with connection theme */
         .connected-card {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05));
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             padding: 24px;
             border-radius: 20px;
             margin: 15px 0;
@@ -393,7 +383,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(119, 182, 234, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
             transition: left 0.6s;
         }
 
@@ -403,7 +393,7 @@
 
         .connected-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 24px 80px rgba(119, 182, 234, 0.4);
+            box-shadow: 0 24px 80px rgba(59, 130, 246, 0.4);
             border-color: var(--bright-blue);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -457,7 +447,7 @@
 
         /* Enhanced Roadmap Styles */
         .roadmap-phase {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.1));
             border-left: 4px solid var(--bright-blue);
             padding: 24px;
             border-radius: 16px;
@@ -485,7 +475,7 @@
 
         .roadmap-phase:hover {
             transform: translateX(8px);
-            box-shadow: 0 12px 40px rgba(119, 182, 234, 0.3);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
             border-left-color: var(--emerald-green);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -502,7 +492,7 @@
 
         .roadmap-target {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.2);
+            background: rgba(13, 148, 136, 0.2);
             color: var(--emerald-green);
             padding: 4px 12px;
             border-radius: 12px;
@@ -513,8 +503,8 @@
 
         /* Enhanced Team Cards */
         .team-member-card {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.12), rgba(16, 185, 129, 0.08));
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(13, 148, 136, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 20px;
             padding: 24px;
             transition: all 0.4s ease;
@@ -529,14 +519,14 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(119, 182, 234, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .team-member-card:hover {
             transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(119, 182, 234, 0.4);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
             border-color: var(--bright-blue);
         }
 
@@ -556,8 +546,8 @@
             font-weight: 900;
             color: white;
             margin-bottom: 16px;
-            border: 3px solid rgba(119, 182, 234, 0.3);
-            box-shadow: 0 8px 24px rgba(119, 182, 234, 0.3);
+            border: 3px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
         }
 
         .team-role {
@@ -582,7 +572,7 @@
         }
 
         .roadmap-card {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.1));
             border-left: 4px solid var(--bright-blue);
             border-radius: 16px;
             padding: 24px;
@@ -608,7 +598,7 @@
 
         .roadmap-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(119, 182, 234, 0.4);
+            box-shadow: 0 16px 48px rgba(59, 130, 246, 0.4);
             border-left-color: var(--emerald-green);
         }
 
@@ -647,7 +637,7 @@
 
         .roadmap-card-target {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.2);
+            background: rgba(13, 148, 136, 0.2);
             color: var(--emerald-green);
             padding: 6px 14px;
             border-radius: 12px;
@@ -663,8 +653,8 @@
         }
 
         .team-card-horizontal {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.12), rgba(16, 185, 129, 0.08));
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(13, 148, 136, 0.08));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 16px;
             padding: 24px;
             transition: all 0.4s ease;
@@ -685,14 +675,14 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(119, 182, 234, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .team-card-horizontal:hover {
             transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(119, 182, 234, 0.4);
+            box-shadow: 0 16px 48px rgba(59, 130, 246, 0.4);
             border-color: var(--bright-blue);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -713,8 +703,8 @@
             font-weight: 900;
             color: white;
             margin-bottom: 16px;
-            border: 3px solid rgba(119, 182, 234, 0.3);
-            box-shadow: 0 8px 24px rgba(119, 182, 234, 0.3);
+            border: 3px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
         }
 
         .team-card-name {
@@ -754,8 +744,8 @@
         }
 
         .team-card {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05));
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             padding: 30px 20px;
             border-radius: 24px;
             text-align: center;
@@ -764,7 +754,7 @@
 
         .team-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 24px 80px rgba(119, 182, 234, 0.5);
+            box-shadow: 0 24px 80px rgba(59, 130, 246, 0.5);
             border-color: var(--bright-blue);
         }
 
@@ -780,7 +770,7 @@
             font-size: 28px;
             font-weight: 900;
             color: white;
-            border: 3px solid rgba(119, 182, 234, 0.3);
+            border: 3px solid rgba(59, 130, 246, 0.3);
         }
 
         /* Navigation */
@@ -808,7 +798,7 @@
 
         .nav-btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 32px rgba(119, 182, 234, 0.5);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.5);
         }
 
         .nav-btn:focus {
@@ -831,7 +821,7 @@
             font-size: 15px;
             font-weight: 600;
             z-index: 1000;
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             backdrop-filter: blur(10px);
         }
 
@@ -869,9 +859,9 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            background: rgba(119, 182, 234, 0.3);
+            background: rgba(59, 130, 246, 0.3);
             color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(119, 182, 234, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.5);
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
@@ -884,7 +874,7 @@
 
         .translate-btn:hover {
             opacity: 1;
-            background: rgba(119, 182, 234, 0.5);
+            background: rgba(59, 130, 246, 0.5);
             color: white;
             border-color: var(--bright-blue);
         }
@@ -903,7 +893,7 @@
             background: linear-gradient(90deg, var(--bright-blue), var(--emerald-green));
             z-index: 2000;
             transition: width 0.3s ease;
-            box-shadow: 0 2px 8px rgba(119, 182, 234, 0.5);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
         }
 
         /* Market boxes */
@@ -915,8 +905,8 @@
         }
 
         .market-box {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05));
-            border: 1px solid rgba(119, 182, 234, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             padding: 24px;
             border-radius: 20px;
             transition: all 0.5s ease;
@@ -937,7 +927,7 @@
 
         .market-box:hover {
             transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 24px 80px rgba(119, 182, 234, 0.5);
+            box-shadow: 0 24px 80px rgba(59, 130, 246, 0.5);
             border-color: var(--bright-blue);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -951,7 +941,7 @@
         }
 
         .funding-item {
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.05));
             padding: 20px;
             border-radius: 16px;
             border-left: 4px solid var(--bright-blue);
@@ -961,7 +951,7 @@
 
         .funding-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 20px 60px rgba(119, 182, 234, 0.35);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.35);
             border-left-color: var(--gold);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -977,12 +967,12 @@
 
         .ask-amount {
             text-align: center;
-            background: linear-gradient(135deg, rgba(119, 182, 234, 0.3), rgba(16, 185, 129, 0.2));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(13, 148, 136, 0.2));
             border: 3px solid var(--bright-blue);
             padding: 20px 30px;
             border-radius: 20px;
             margin: 12px 0;
-            box-shadow: 0 30px 80px rgba(119, 182, 234, 0.4);
+            box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -1216,22 +1206,25 @@
             
             .connected-card, .market-box, .funding-item, .roadmap-card, .team-card-horizontal, .ask-amount {
                 page-break-inside: avoid;
-                background: linear-gradient(135deg, rgba(119, 182, 234, 0.15), rgba(16, 185, 129, 0.1)) !important;
-                border: 1px solid rgba(119, 182, 234, 0.3) !important;
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.1)) !important;
+                border: 1px solid rgba(59, 130, 246, 0.3) !important;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
             }
             
             .network-line {
-                border-top: 2px dashed rgba(119, 182, 234, 0.8) !important;
+                height: 3px !important;
+                background: linear-gradient(90deg, var(--bright-blue), var(--emerald-green)) !important;
+                border: none !important;
+                animation: none !important;
             }
             
             .network-node {
-                background: linear-gradient(135deg, rgba(119, 182, 234, 0.2), rgba(16, 185, 129, 0.1)) !important;
-                border: 2px solid rgba(119, 182, 234, 0.5) !important;
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(13, 148, 136, 0.1)) !important;
+                border: 2px solid rgba(59, 130, 246, 0.5) !important;
             }
             
             .network-center {
-                background: linear-gradient(135deg, rgba(119, 182, 234, 0.3), rgba(16, 185, 129, 0.2)) !important;
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(13, 148, 136, 0.2)) !important;
                 border: 3px solid var(--bright-blue) !important;
             }
             
@@ -1251,7 +1244,7 @@
         <!-- Slide 1: Title -->
         <div class="slide active title-slide">
             <div class="logo-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='85' fill='none' stroke='%2377B6EA' stroke-width='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%2310B981' stroke-width='2' opacity='0.6'/%3E%3Ctext x='100' y='120' font-family='Inter, sans-serif' font-size='48' font-weight='900' text-anchor='middle' fill='%2377B6EA' letter-spacing='4'%3EDAZ%3C/text%3E%3Cg opacity='0.7'%3E%3Ccircle cx='80' cy='50' r='3' fill='%2377B6EA'/%3E%3Ccircle cx='100' cy='45' r='3' fill='%2377B6EA'/%3E%3Ccircle cx='120' cy='50' r='3' fill='%2377B6EA'/%3E%3Cline x1='80' y1='53' x2='80' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3Cline x1='100' y1='48' x2='100' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3Cline x1='120' y1='53' x2='120' y2='65' stroke='%2377B6EA' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E" 
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='85' fill='none' stroke='%233b82f6' stroke-width='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%230d9488' stroke-width='2' opacity='0.6'/%3E%3Ctext x='100' y='120' font-family='Inter, sans-serif' font-size='48' font-weight='900' text-anchor='middle' fill='%233b82f6' letter-spacing='4'%3EDAZ%3C/text%3E%3Cg opacity='0.7'%3E%3Ccircle cx='80' cy='50' r='3' fill='%233b82f6'/%3E%3Ccircle cx='100' cy='45' r='3' fill='%233b82f6'/%3E%3Ccircle cx='120' cy='50' r='3' fill='%233b82f6'/%3E%3Cline x1='80' y1='53' x2='80' y2='65' stroke='%233b82f6' stroke-width='2'/%3E%3Cline x1='100' y1='48' x2='100' y2='65' stroke='%233b82f6' stroke-width='2'/%3E%3Cline x1='120' y1='53' x2='120' y2='65' stroke='%233b82f6' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E" 
                      alt="DAZ Logo" 
                      class="daz-logo">
             </div>
@@ -1262,27 +1255,35 @@
 
         <!-- Slide 2: Problem + Market -->
         <div class="slide">
-            <h1 data-hebrew="⏰ פיתוח נדל״ן: שבועות של עבודה ידנית">⏰ Real Estate Development: Weeks of Manual Work</h1>
+            <h1 data-hebrew="⏰ פיתוח נדל״ן: שבועות של עבודה ידנית" style="font-size: 38px;">⏰ Real Estate Development: Weeks of Manual Work</h1>
             <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="text-align: center; margin-bottom: 25px;" data-hebrew="התהליך המסורתי">The Traditional Process</h2>
-                <ul style="font-size: 21px;">
-                    <li data-hebrew="📋 שבועות של איסוף נתונים - איסוף ידני ממקורות מרובים"><strong>📋 Weeks of data gathering</strong> - Manual collection from multiple sources</li>
-                    <li data-hebrew="❌ החלטות מפוצלות - ללא מודיעין מרכזי"><strong>❌ Fragmented decisions</strong> - No centralized intelligence</li>
-                    <li data-hebrew="⚠️ אי-ודאות גבוהה - חוסר במידע קריטי"><strong>⚠️ High uncertainty</strong> - Missing critical information</li>
-                    <li data-hebrew="💰 טעויות יקרות - מתגלות מאוחר מדי"><strong>💰 Expensive mistakes</strong> - Discovered too late in the process</li>
+                <h2 style="text-align: center; margin-bottom: 25px; font-size: 26px;" data-hebrew="התהליך המסורתי">The Traditional Process</h2>
+                <ul style="font-size: 22px; line-height: 1.6;">
+                    <li data-hebrew="📋 שבועות של איסוף נתונים - איסוף ידני ממקורות מרובים"><strong>📋 Weeks of data gathering</strong> — Manual collection from multiple sources</li>
+                    <li data-hebrew="❌ החלטות מפוצלות - ללא מודיעין מרכזי"><strong>❌ Fragmented decisions</strong> — No centralized intelligence</li>
+                    <li data-hebrew="⚠️ אי-ודאות גבוהה - חוסר במידע קריטי"><strong>⚠️ High uncertainty</strong> — Missing critical information</li>
+                    <li data-hebrew="💰 טעויות יקרות - מתגלות מאוחר מדי"><strong>💰 Expensive mistakes</strong> — Discovered too late in the process</li>
                 </ul>
             </div>
             
-            <h2 style="margin-top: 40px; text-align: center;" data-hebrew="🌍 הזדמנות שוק עצומה">🌍 Massive Market Opportunity</h2>
+            <h2 style="margin-top: 40px; text-align: center; font-size: 26px;" data-hebrew="🌍 הזדמנות שוק עצומה">🌍 Massive Market Opportunity</h2>
             <div class="market-grid">
                 <div class="market-box">
-                    <h3 style="color: var(--bright-blue);" data-hebrew="📈 שוק PropTech">📈 PropTech Market</h3>
-                    <p style="font-size: 24px; margin: 15px 0;"><strong>$47B</strong> (2025) → <strong>$185B</strong> (2034)</p>
-                    <p style="color: var(--emerald-green); font-weight: 600;">CAGR: 16-17%</p>
+                    <h3 style="color: var(--bright-blue); font-size: 22px;" data-hebrew="📈 שוק PropTech">📈 PropTech Market</h3>
+                    <p style="font-size: 26px; margin: 15px 0; line-height: 1.5;"><strong>$29B</strong> (2022) → <strong>$94B</strong> (2030) <span style="font-size: 18px; color: var(--text-muted);">global</span></p>
+                    <p style="font-size: 20px; margin: 8px 0;" data-hebrew="אירופה: ~$13B (2025) → ~$24B (2030)">Europe: <strong>~$13B</strong> (2025) → <strong>~$24B</strong> (2030)</p>
+                    <p style="color: var(--emerald-green); font-weight: 600; font-size: 18px;" data-hebrew="CAGR 15.8% גלובלי · 16%+ אירופה">CAGR 15.8% global · 16%+ Europe</p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;" data-hebrew="מקורות: Grand View Research; דוחות EU/אירופה">Sources: Grand View Research; EU/Europe reports</p>
                 </div>
                 <div class="market-box">
-                    <h3 style="color: var(--bright-blue);" data-hebrew="🎯 לקוחות יעד">🎯 Target Customers</h3>
-                    <p style="font-size: 18px; margin-top: 15px;" data-hebrew="יזמי נדל״ן, משקיעים, עו״ד, אדריכל ויזמים ברחבי העולם המחפשים בהירות מיידית לפרויקטים">Real estate developers, Entrepreneurs, Lawyers, Architects, and worldwide seeking instant project clarity</p>
+                    <h3 style="color: var(--bright-blue); font-size: 22px;" data-hebrew="🎯 שוקי יעד">🎯 Target Markets</h3>
+                    <ul style="list-style: none; font-size: 20px; margin-top: 12px; padding-left: 0; line-height: 1.7;">
+                        <li data-hebrew="• יזמי נדל״ן">• Real estate developers</li>
+                        <li data-hebrew="• יזמים">• Entrepreneurs</li>
+                        <li data-hebrew="• עורכי דין">• Lawyers</li>
+                        <li data-hebrew="• אדריכלים">• Architects</li>
+                        <li data-hebrew="• שמאים">• Appraisers</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1339,23 +1340,31 @@
         <div class="slide">
             <h1 data-hebrew="🔄 איך DAZ עובד: המסע של הפרויקט שלך">🔄 How DAZ Works: Your Project Journey</h1>
             
-            <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="margin-bottom: 25px;" data-hebrew="📋 לפני הפרויקט">📋 Before the Project</h2>
+            <div class="connected-card" style="margin: 18px 0;">
+                <h2 style="margin-bottom: 20px;" data-hebrew="📋 לפני הפרויקט">📋 Before the Project</h2>
                 <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניתוח היתכנות מלא בדקות: כדאיות כלכלית, ודאות משפטית, התאמה לתכנון, ניתוח שוק, תחזיות פיננסיות, הערכת סיכונים">
                     <strong>Complete feasibility analysis in minutes:</strong> Economic viability, legal certainty, 
                     zoning compliance, market analysis, financial projections, risk assessment
                 </p>
             </div>
             
-            <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="margin-bottom: 25px;" data-hebrew="🚀 במהלך הפרויקט">🚀 During the Project</h2>
+            <div class="connected-card" style="margin: 18px 0;">
+                <h2 style="margin-bottom: 20px;" data-hebrew="🚀 במהלך הפרויקט">🚀 During the Project</h2>
                 <p style="font-size: 20px; line-height: 1.8;" data-hebrew="ניטור רציף ותמיכה בהחלטות: אינטגרציית נתונים בזמן אמת, מעקב התקדמות אוטומטי, התראות סיכון, ניטור תקציב, ניהול לוחות זמנים">
                     <strong>Continuous monitoring & decision support:</strong> Real-time data integration, 
                     automated progress tracking, risk alerts, budget monitoring, timeline management
                 </p>
             </div>
             
-            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(119, 182, 234, 0.2), rgba(16, 185, 129, 0.1)); border-radius: 20px;">
+            <div class="connected-card" style="margin: 18px 0;">
+                <h2 style="margin-bottom: 20px;" data-hebrew="📁 אחרי הפרויקט">📁 After the Project</h2>
+                <p style="font-size: 20px; line-height: 1.8;" data-hebrew="תיעוד ולמידה: דוחות סגירה, תובנות לביצועים, ארכיון מסמכים, לקחים לפרויקטים עתידיים, עדכון תבניות וערכות ערכים">
+                    <strong>Documentation & learning:</strong> Close-out reports, performance insights, document archive, 
+                    lessons learned for future projects, template and benchmark updates
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(13, 148, 136, 0.1)); border-radius: 20px;">
                 <h2 style="margin-bottom: 20px;" data-hebrew="⚡ התוצאה">⚡ The Result</h2>
                 <p style="font-size: 28px; font-weight: 700; line-height: 1.6;" data-hebrew="בהירות מיידית בכל שלב - החלטות טובות יותר, ביצוע מהיר יותר, סיכון מופחת">
                     Instant clarity at every stage<br/>
@@ -1379,26 +1388,26 @@
                     <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);" data-hebrew="מנוי בסיסי">Base Subscription</p>
                 </div>
                 
-                <div class="connected-card" style="text-align: center; border: 3px solid var(--bright-blue); transform: scale(1.05);">
-                    <h3 style="color: var(--gold); margin-bottom: 20px;" data-hebrew="⭐ שכבה 2: ניתוח פיננסי מלא">⭐ Tier 2: Complete Financial Analysis</h3>
+                <div class="connected-card" style="text-align: center;">
+                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;" data-hebrew="שכבה 2: ניתוח פיננסי מלא">Tier 2: Complete Financial Analysis</h3>
                     <ul style="text-align: left; list-style: none; font-size: 17px; margin: 20px 0;">
                         <li style="margin-bottom: 12px;" data-hebrew="✅ כל תכונות שכבה 1">✅ All Tier 1 features</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ מודלים פיננסיים מלאים (תזרים, ROI, IRR)">✅ Full financial modeling (cash flow, ROI, IRR)</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ בדיקת כדאיות כלכלית מקיפה">✅ Comprehensive economic feasibility</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ תחזיות פיננסיות מתקדמות">✅ Advanced financial projections</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 700; color: var(--gold);" data-hebrew="תוכנית מקצועית">Professional Plan</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);" data-hebrew="תוכנית מקצועית">Professional Plan</p>
                 </div>
                 
-                <div class="connected-card" style="text-align: center;">
-                    <h3 style="color: var(--bright-blue); margin-bottom: 20px;" data-hebrew="שכבה 3: עוזר Multi-Agent מלא">Tier 3: Full Multi-Agent Assistant</h3>
+                <div class="connected-card" style="text-align: center; border: 3px solid var(--bright-blue); transform: scale(1.05);">
+                    <h3 style="color: var(--gold); margin-bottom: 20px;" data-hebrew="⭐ שכבה 3: עוזר Multi-Agent מלא">⭐ Tier 3: Full Multi-Agent Assistant</h3>
                     <ul style="text-align: left; list-style: none; font-size: 17px; margin: 20px 0;">
                         <li style="margin-bottom: 12px;" data-hebrew="✅ כל תכונות שכבה 2">✅ All Tier 2 features</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ סוכן AI מנהל את כל מחזור חיי הפרויקט">✅ AI agent managing entire project lifecycle</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ ניטור וביצוע פרויקט אוטומטי">✅ Automated project monitoring & execution</li>
                         <li style="margin-bottom: 12px;" data-hebrew="✅ תמיכה בהחלטות בזמן אמת">✅ Real-time decision support</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 700; color: var(--emerald-green);" data-hebrew="ארגוני + לפי פרויקט">Enterprise + Per-Project</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: var(--gold);" data-hebrew="ארגוני + לפי פרויקט">Enterprise + Per-Project</p>
                 </div>
             </div>
             
@@ -1461,17 +1470,17 @@
                 <h2 class="section-header" data-hebrew="👥 צוות מייסדים">👥 Founding Team</h2>
                 <div class="team-section">
                     <div class="team-card-horizontal">
-                        <div class="team-card-avatar">AK</div>
-                        <div class="team-card-name">Alpir Kritzler</div>
-                        <div class="team-card-role">CEO</div>
-                        <div class="team-card-expertise" data-hebrew="אסטרטגיית טכנולוגיה ומוצר">Tech & Product Strategy</div>
-                    </div>
-                    
-                    <div class="team-card-horizontal">
                         <div class="team-card-avatar">OZ</div>
                         <div class="team-card-name">Or Zelniker</div>
                         <div class="team-card-role">CRO</div>
                         <div class="team-card-expertise" data-hebrew="מומחיות בנדל״ן ומשפטים">Real Estate & Legal Expertise</div>
+                    </div>
+                    
+                    <div class="team-card-horizontal">
+                        <div class="team-card-avatar">AK</div>
+                        <div class="team-card-name">Alpir Kritzler</div>
+                        <div class="team-card-role">CEO</div>
+                        <div class="team-card-expertise" data-hebrew="אסטרטגיית טכנולוגיה ומוצר">Tech & Product Strategy</div>
                     </div>
                     
                     <div class="team-card-horizontal">
@@ -1482,7 +1491,7 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 24px; padding: 14px; background: linear-gradient(135deg, rgba(119, 182, 234, 0.1), rgba(16, 185, 129, 0.05)); border-radius: 12px;">
+                <div style="text-align: center; margin-top: 24px; padding: 14px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.05)); border-radius: 12px;">
                     <p style="font-size: 13px; color: var(--warm-gray); line-height: 1.5;" data-hebrew="מומחיות עמוקה בנדל״ן, משפטים ובינה מלאכותית">
                         <strong style="color: var(--bright-blue);">Deep expertise</strong> across Real Estate, Law, and AI
                     </p>
@@ -1671,7 +1680,7 @@
                     
                     network.insertBefore(line, center); // Insert before center so lines are behind nodes
                     
-                    // Add data pulses with staggered timing
+                    // Add data pulses (center→node) with staggered timing for clearer data flow
                     const pulseInterval = setInterval(() => {
                         if (!network.contains(center)) {
                             clearInterval(pulseInterval);
@@ -1687,11 +1696,9 @@
                         network.appendChild(pulse);
                         
                         setTimeout(() => {
-                            if (pulse.parentNode) {
-                                pulse.remove();
-                            }
-                        }, 2500);
-                    }, 2500 + index * 400);
+                            if (pulse.parentNode) pulse.remove();
+                        }, 2100);
+                    }, 1600 + index * 280);
                 });
             }, 200);
         }
