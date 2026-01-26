@@ -2,23 +2,45 @@
 
 ## GitHub Pages (View-Only URL)
 
-המצגת כבר מועלת ל-GitHub. להפעלת GitHub Pages:
+המצגת מוכנה לפרסום! הקובץ `index.html` נוצר אוטומטית.
 
-1. **גש ל-GitHub Repository:**
-   - https://github.com/alpirkritz/Daz-Investor-Deck
+### שלבים לפרסום:
 
-2. **הפעל GitHub Pages:**
-   - Settings > Pages
-   - Source: `main` branch
-   - Folder: `/ (root)`
-   - Save
+1. **ודא שהקובץ index.html קיים:**
+   ```bash
+   ls -la index.html
+   ```
+   (אם לא קיים, הרץ: `cp DAZ_Investor_Deck.html index.html`)
 
-3. **קבל את ה-URL:**
+2. **הוסף ל-git ודחוף:**
+   ```bash
+   git add index.html
+   git commit -m "Add index.html for GitHub Pages deployment"
+   git push
+   ```
+
+3. **הפעל GitHub Pages:**
+   - גש ל: https://github.com/alpirkritz/Daz-Investor-Deck
+   - לחץ על **Settings** (מימין למעלה)
+   - גלול למטה ל-**Pages** (בסיידבר השמאלי)
+   - תחת **Source**, בחר:
+     - Branch: `main`
+     - Folder: `/ (root)`
+   - לחץ **Save**
+
+4. **אם ה-repo הוא פרטי:**
+   - GitHub Pages בחינם זמין רק ל-repositories ציבוריים
+   - פתרונות:
+     - הפוך את ה-repo ל-public זמנית (Settings > General > Danger Zone > Change visibility)
+     - או השתמש ב-Netlify/Vercel (ראה למטה)
+
+5. **קבל את ה-URL:**
    - ה-URL יהיה: `https://alpirkritz.github.io/Daz-Investor-Deck/`
-   - יופיע ב-Settings > Pages אחרי כמה דקות
+   - יופיע ב-Settings > Pages אחרי 1-2 דקות
+   - המצגת תהיה זמינה לצפייה בלבד (view-only)
 
-4. **עדכונים:**
-   - כל `git push` יעדכן את האתר אוטומטית
+6. **עדכונים עתידיים:**
+   - כל `git push` יעדכן את האתר אוטומטית תוך 1-2 דקות
 
 ---
 
