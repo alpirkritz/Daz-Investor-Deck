@@ -46,9 +46,9 @@ function getTextContent(element) {
     return text.trim().replace(/\s+/g, ' ');
 }
 
-// Helper function to clean emoji and special characters for PPTX
+// Helper function to clean text for PPTX (keep emojis and special chars)
 function cleanText(text) {
-    return text.replace(/[^\x00-\x7F]/g, '').trim(); // Remove non-ASCII (keeps basic text)
+    return text.trim().replace(/\s+/g, ' '); // Keep all characters, just clean whitespace
 }
 
 // Get all slides
@@ -76,46 +76,96 @@ slides.forEach((slide, index) => {
         });
     }
     
-    // Extract subtitle (h2)
-    const h2Elements = slide.querySelectorAll('h2');
+    // Extract content cards and regular content
     let yPos = 1.5;
-    h2Elements.forEach((h2, idx) => {
-        if (idx < 2) { // Limit to first 2 h2s
-            const text = cleanText(getTextContent(h2));
-            slideElement.addText(text, {
-                x: 0.5,
-                y: yPos,
-                w: 9,
-                h: 0.5,
-                fontSize: 24,
-                bold: true,
-                color: colors.brightBlue,
-                fontFace: 'Arial'
-            });
-            yPos += 0.7;
-        }
-    });
     
-    // Extract paragraphs and lists
-    const paragraphs = slide.querySelectorAll('p, li');
-    paragraphs.forEach((p, idx) => {
-        if (yPos < 6.5 && idx < 8) { // Limit content to fit slide
-            const text = cleanText(getTextContent(p));
-            if (text && text.length > 0) {
+    // Check if slide has connected-card elements (structured content)
+    const cards = slide.querySelectorAll('.connected-card');
+    if (cards.length > 0) {
+        // Process each card
+        cards.forEach((card) => {
+            if (yPos < 6.2) {
+                // Get card heading
+                const cardH2 = card.querySelector('h2');
+                if (cardH2) {
+                    const h2Text = cleanText(getTextContent(cardH2));
+                    slideElement.addText(h2Text, {
+                        x: 0.5,
+                        y: yPos,
+                        w: 9,
+                        h: 0.5,
+                        fontSize: 22,
+                        bold: true,
+                        color: colors.brightBlue,
+                        fontFace: 'Arial'
+                    });
+                    yPos += 0.6;
+                }
+                
+                // Get card paragraphs
+                const cardParas = card.querySelectorAll('p');
+                cardParas.forEach((p) => {
+                    if (yPos < 6.2) {
+                        const text = cleanText(getTextContent(p));
+                        if (text && text.length > 0) {
+                            slideElement.addText(text, {
+                                x: 0.5,
+                                y: yPos,
+                                w: 9,
+                                h: 'auto',
+                                fontSize: 13,
+                                color: colors.warmGray,
+                                fontFace: 'Arial'
+                            });
+                            yPos += 0.7;
+                        }
+                    }
+                });
+                
+                yPos += 0.15; // Small gap between cards
+            }
+        });
+    } else {
+        // Regular slide without cards - extract h2 and content normally
+        const h2Elements = slide.querySelectorAll('h2');
+        h2Elements.forEach((h2, idx) => {
+            if (yPos < 6.2 && idx < 3) {
+                const text = cleanText(getTextContent(h2));
                 slideElement.addText(text, {
                     x: 0.5,
                     y: yPos,
                     w: 9,
-                    h: 0.4,
-                    fontSize: 14,
-                    color: colors.warmGray,
-                    fontFace: 'Arial',
-                    bullet: p.tagName === 'LI' ? true : false
+                    h: 0.5,
+                    fontSize: 24,
+                    bold: true,
+                    color: colors.brightBlue,
+                    fontFace: 'Arial'
                 });
-                yPos += 0.5;
+                yPos += 0.7;
             }
-        }
-    });
+        });
+        
+        // Extract paragraphs and lists
+        const paragraphs = slide.querySelectorAll('p, li');
+        paragraphs.forEach((p, idx) => {
+            if (yPos < 6.2 && idx < 10) {
+                const text = cleanText(getTextContent(p));
+                if (text && text.length > 0) {
+                    slideElement.addText(text, {
+                        x: 0.5,
+                        y: yPos,
+                        w: 9,
+                        h: 'auto',
+                        fontSize: 14,
+                        color: colors.warmGray,
+                        fontFace: 'Arial',
+                        bullet: p.tagName === 'LI' ? true : false
+                    });
+                    yPos += 0.5;
+                }
+            }
+        });
+    }
     
     // Special handling for title slide
     if (slide.classList.contains('title-slide')) {
