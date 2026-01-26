@@ -1102,13 +1102,13 @@
                 margin: 20px 0;
             }
             
-            .connected-card h2 {
-                font-size: 24px !important;
-                margin-bottom: 20px !important;
+            .connected-card h2:not([style*="font-size"]) {
+                font-size: 24px;
+                margin-bottom: 20px;
             }
             
-            .connected-card ul {
-                font-size: 18px !important;
+            .connected-card ul:not([style*="font-size"]) {
+                font-size: 18px;
             }
             
             .roadmap-section, .team-section { 
@@ -1258,19 +1258,19 @@
                 border-radius: 16px;
             }
             
-            .connected-card h2 {
-                font-size: 18px !important;
-                margin-bottom: 15px !important;
-                line-height: 1.3 !important;
+            .connected-card h2:not([style*="font-size"]) {
+                font-size: 18px;
+                margin-bottom: 15px;
+                line-height: 1.3;
             }
             
-            .connected-card ul {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
+            .connected-card ul:not([style*="font-size"]) {
+                font-size: 15px;
+                line-height: 1.5;
                 padding-left: 20px;
             }
             
-            .connected-card li {
+            .connected-card li:not([style*="font-size"]) {
                 margin-bottom: 8px;
             }
             
@@ -1458,19 +1458,19 @@
                 border-radius: 12px;
             }
             
-            .connected-card h2 {
-                font-size: 16px !important;
-                margin-bottom: 12px !important;
-                line-height: 1.2 !important;
+            .connected-card h2:not([style*="font-size"]) {
+                font-size: 16px;
+                margin-bottom: 12px;
+                line-height: 1.2;
             }
             
-            .connected-card ul {
-                font-size: 13px !important;
-                line-height: 1.4 !important;
+            .connected-card ul:not([style*="font-size"]) {
+                font-size: 13px;
+                line-height: 1.4;
                 padding-left: 18px;
             }
             
-            .connected-card li {
+            .connected-card li:not([style*="font-size"]) {
                 margin-bottom: 6px;
             }
             
@@ -1949,9 +1949,9 @@
                             <span class="roadmap-card-icon">🚀</span>
                             <span class="roadmap-card-date">Q2 2026</span>
                         </div>
-                        <div class="roadmap-card-title" data-hebrew="השקת MVP">MVP Launch</div>
-                        <div class="roadmap-card-description" data-hebrew="רשת סוכנים מרכזית + כלי ניתוח היתכנות">
-                            Core agent network + Feasibility analysis tool
+                        <div class="roadmap-card-title" data-hebrew="שכבה 1: אימות זכויות בסיסי">Tier 1: Basic Rights Verification</div>
+                        <div class="roadmap-card-description" data-hebrew="בדיקת זכויות קניין בסיסית + אימות זכאות משפטית + סינון היתכנות ראשוני">
+                            Basic property rights check + Legal entitlement verification + Initial feasibility screening
                         </div>
                         <span class="roadmap-card-target" data-hebrew="יעד: 10-20 לקוחות בטא">Target: 10-20 beta customers</span>
                     </div>
@@ -1961,21 +1961,21 @@
                             <span class="roadmap-card-icon">⚡</span>
                             <span class="roadmap-card-date">Q4 2026</span>
                         </div>
-                        <div class="roadmap-card-title" data-hebrew="פלטפורמה מלאה">Full Platform</div>
-                        <div class="roadmap-card-description" data-hebrew="מערכת סוכנים מלאה + לוח בקרה לניטור">
-                            Complete agent ecosystem + Monitoring dashboard
+                        <div class="roadmap-card-title" data-hebrew="שכבה 2: ניתוח פיננסי מלא">Tier 2: Complete Financial Analysis</div>
+                        <div class="roadmap-card-description" data-hebrew="מודלים פיננסיים מלאים + בדיקת כדאיות כלכלית + תחזיות פיננסיות מתקדמות">
+                            Full financial modeling (cash flow, ROI, IRR) + Comprehensive economic feasibility + Advanced financial projections
                         </div>
                         <span class="roadmap-card-target" data-hebrew="יעד: 50+ לקוחות פעילים">Target: 50+ active customers</span>
                     </div>
                     
                     <div class="roadmap-card">
                         <div class="roadmap-card-header">
-                            <span class="roadmap-card-icon">🌟</span>
+                            <span class="roadmap-card-icon">⭐</span>
                             <span class="roadmap-card-date">2027</span>
                         </div>
-                        <div class="roadmap-card-title" data-hebrew="צמיחה והתרחבות">Scale & Expand</div>
-                        <div class="roadmap-card-description" data-hebrew="שווקים בינלאומיים + תכונות ארגוניות">
-                            International markets + Enterprise features
+                        <div class="roadmap-card-title" data-hebrew="שכבה 3: עוזר Multi-Agent מלא">Tier 3: Full Multi-Agent Assistant</div>
+                        <div class="roadmap-card-description" data-hebrew="סוכן AI מנהל את כל מחזור חיי הפרויקט + ניטור וביצוע אוטומטי + תמיכה בהחלטות בזמן אמת">
+                            AI agent managing entire project lifecycle + Automated project monitoring & execution + Real-time decision support
                         </div>
                         <span class="roadmap-card-target" data-hebrew="יעד: 200+ לקוחות, $2-5M ARR">Target: 200+ customers, $2-5M ARR</span>
                     </div>
@@ -2027,7 +2027,7 @@
             <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 36px;" data-hebrew="🚀 הצטרפו אלינו: בונים את העתיד">🚀 Join Us: Building the Future</h1>
             
             <div class="ask-amount" style="margin: 15px 0;">
-                <div class="amount" style="font-size: 56px;">$2M</div>
+                <div class="amount" style="font-size: 56px;">$1M</div>
                 <p style="font-size: 22px; font-weight: 600; margin: 0;" data-hebrew="סבב גיוס">Funding Round</p>
             </div>
             
