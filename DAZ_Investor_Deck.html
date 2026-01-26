@@ -1016,35 +1016,135 @@
             .team-grid { grid-template-columns: 1fr; }
         }
 
-        /* Tablet Optimization */
+        /* Tablet/Laptop Optimization */
         @media (max-width: 1024px) {
-            .slide { padding: 40px 30px; }
-            .slide h1 { font-size: 36px; }
-            .slide h2 { font-size: 24px; }
-            .slide h3 { font-size: 18px; }
-            .slide p, .slide li { font-size: 16px; }
+            .slide { 
+                padding: 40px 35px;
+            }
             
-            .title-slide h1 { font-size: 72px; letter-spacing: 12px; }
-            .title-slide .subtitle { font-size: 22px; }
-            .title-slide .tagline { font-size: 18px; }
+            .slide h1 { 
+                font-size: 38px;
+                margin-bottom: 18px;
+            }
+            
+            .slide h2 { 
+                font-size: 26px;
+                margin-bottom: 14px;
+            }
+            
+            .slide h3 { 
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .slide p, .slide li { 
+                font-size: 17px;
+                line-height: 1.6;
+            }
+            
+            .title-slide h1 { 
+                font-size: 78px;
+                letter-spacing: 12px;
+            }
+            
+            .title-slide .subtitle { 
+                font-size: 24px;
+                line-height: 1.5;
+            }
+            
+            .title-slide .tagline { 
+                font-size: 19px;
+                letter-spacing: 1px;
+            }
+            
+            /* Network visualization for laptop */
+            .network-container {
+                height: 420px;
+                margin: 25px 0;
+            }
+            
+            .network-center {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .network-center-text {
+                font-size: 18px;
+            }
+            
+            .network-node {
+                width: 95px;
+                height: 95px;
+            }
+            
+            .network-node-icon {
+                font-size: 26px;
+            }
+            
+            .network-node-title {
+                font-size: 11px;
+            }
+            
+            /* Override inline styles for laptop */
+            .slide p[style*="font-size: 24px"] {
+                font-size: 20px !important;
+                margin-bottom: 25px !important;
+            }
+            
+            .slide p[style*="font-size: 22px"] {
+                font-size: 19px !important;
+                margin-top: 25px !important;
+            }
+            
+            /* Cards */
+            .connected-card {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .connected-card h2 {
+                font-size: 24px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .connected-card ul {
+                font-size: 18px !important;
+            }
             
             .roadmap-section, .team-section { 
                 grid-template-columns: 1fr; 
-                gap: 16px;
+                gap: 18px;
             }
             
-            .market-grid { grid-template-columns: 1fr; }
+            .market-grid { 
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            
+            .funding-grid {
+                gap: 18px;
+            }
             
             .navigation { 
-                bottom: 20px;
-                right: 20px;
-                gap: 8px;
+                bottom: 24px;
+                right: 24px;
+                gap: 10px;
+            }
+            
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 15px;
             }
             
             .slide-counter {
-                top: 20px;
-                right: 20px;
-                padding: 10px 20px;
+                top: 24px;
+                right: 24px;
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+            
+            .translate-btn, .export-btn {
+                padding: 10px 16px;
                 font-size: 14px;
             }
         }
