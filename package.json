@@ -1,0 +1,16 @@
+{
+  "name": "daz-investor-deck",
+  "version": "1.0.0",
+  "description": "DAZ Investor Deck - Export to PPTX",
+  "main": "export-to-pptx.js",
+  "scripts": {
+    "export-pptx": "node export-to-pptx.js"
+  },
+  "keywords": ["presentation", "pptx", "investor-deck"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pptxgenjs": "^3.12.0",
+    "jsdom": "^23.0.1"
+  }
+}
