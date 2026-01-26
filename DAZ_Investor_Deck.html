@@ -705,6 +705,15 @@
             margin-bottom: 16px;
             border: 3px solid rgba(59, 130, 246, 0.3);
             box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+            overflow: hidden;
+        }
+
+        .team-card-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            object-position: center;
         }
 
         .team-card-name {
@@ -1470,21 +1479,27 @@
                 <h2 class="section-header" data-hebrew="👥 צוות מייסדים">👥 Founding Team</h2>
                 <div class="team-section">
                     <div class="team-card-horizontal">
-                        <div class="team-card-avatar">OZ</div>
+                        <div class="team-card-avatar">
+                            <img src="assets/Or_Zelniker.png" alt="Or Zelniker" />
+                        </div>
                         <div class="team-card-name">Or Zelniker</div>
                         <div class="team-card-role">CRO</div>
                         <div class="team-card-expertise" data-hebrew="מומחיות בנדל״ן ומשפטים">Real Estate & Legal Expertise</div>
                     </div>
                     
                     <div class="team-card-horizontal">
-                        <div class="team-card-avatar">AK</div>
+                        <div class="team-card-avatar">
+                            <img src="assets/Alpir_Kritzler.png" alt="Alpir Kritzler" />
+                        </div>
                         <div class="team-card-name">Alpir Kritzler</div>
                         <div class="team-card-role">CEO</div>
                         <div class="team-card-expertise" data-hebrew="אסטרטגיית טכנולוגיה ומוצר">Tech & Product Strategy</div>
                     </div>
                     
                     <div class="team-card-horizontal">
-                        <div class="team-card-avatar">DP</div>
+                        <div class="team-card-avatar">
+                            <img src="assets/Dor_Perez.png" alt="Dor Perez" />
+                        </div>
                         <div class="team-card-name">Dor Perez</div>
                         <div class="team-card-role">CTO</div>
                         <div class="team-card-expertise" data-hebrew="טכנולוגיית AI">AI/AGI Technology</div>
