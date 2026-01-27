@@ -942,6 +942,47 @@
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
+        /* Hero stat box for Cost of Uncertainty */
+        .hero-stat-box {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-stat-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.15), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+
+        /* Featured market box styling */
+        .market-box-featured {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 50px rgba(59, 130, 246, 0.5);
+            }
+        }
+
+        .market-box-featured:hover {
+            transform: translateY(-15px) scale(1.08);
+            box-shadow: 0 30px 90px rgba(59, 130, 246, 0.6) !important;
+        }
+
         /* Funding breakdown */
         .funding-grid {
             display: grid;
@@ -1120,6 +1161,28 @@
             .market-grid { 
                 grid-template-columns: 1fr;
                 gap: 18px;
+            }
+            
+            /* Hero stat box responsive */
+            .hero-stat-box {
+                margin: 20px 0 25px 0 !important;
+                padding: 30px 20px !important;
+            }
+            
+            .hero-stat-box div[style*="font-size: 72px"] {
+                font-size: 48px !important;
+            }
+            
+            .hero-stat-box p[style*="font-size: 28px"] {
+                font-size: 20px !important;
+            }
+            
+            .hero-stat-box p[style*="font-size: 22px"] {
+                font-size: 16px !important;
+            }
+            
+            .market-box-featured {
+                transform: scale(1) !important;
             }
             
             .funding-grid {
@@ -1328,6 +1391,24 @@
             .market-grid, .funding-grid, .roadmap-section, .team-section { 
                 grid-template-columns: 1fr;
                 gap: 12px;
+            }
+            
+            /* Hero stat box - smaller screens */
+            .hero-stat-box div[style*="font-size: 72px"] {
+                font-size: 36px !important;
+            }
+            
+            .hero-stat-box p[style*="font-size: 28px"] {
+                font-size: 18px !important;
+            }
+            
+            .hero-stat-box p[style*="font-size: 22px"] {
+                font-size: 14px !important;
+            }
+            
+            .hero-stat-box p[style*="font-size: 20px"] {
+                font-size: 14px !important;
+                padding: 12px 16px !important;
             }
             
             /* Navigation - Touch Optimized */
@@ -2074,7 +2155,7 @@
 <body>
     <div class="presentation-container">
         <div class="slide-counter">
-            <span id="current-slide">1</span> / <span id="total-slides">7</span>
+            <span id="current-slide">1</span> / <span id="total-slides">8</span>
         </div>
 
         <!-- Slide 1: Title -->
@@ -2091,36 +2172,53 @@
 
         <!-- Slide 2: Problem + Market -->
         <div class="slide">
-            <h1 data-hebrew="⏰ פיתוח נדל״ן: שבועות של עבודה ידנית" style="font-size: 38px;">⏰ Real Estate Development: Weeks of Manual Work</h1>
-            <div class="connected-card" style="margin: 30px 0;">
-                <h2 style="text-align: center; margin-bottom: 25px; font-size: 26px;" data-hebrew="התהליך המסורתי">The Traditional Process</h2>
-                <ul style="font-size: 22px; line-height: 1.6;">
-                    <li data-hebrew="📋 שבועות של איסוף נתונים - איסוף ידני ממקורות מרובים"><strong>📋 Weeks of data gathering</strong> — Manual collection from multiple sources</li>
-                    <li data-hebrew="❌ החלטות מפוצלות - ללא מודיעין מרכזי"><strong>❌ Fragmented decisions</strong> — No centralized intelligence</li>
-                    <li data-hebrew="⚠️ אי-ודאות גבוהה - חוסר במידע קריטי"><strong>⚠️ High uncertainty</strong> — Missing critical information</li>
-                    <li data-hebrew="💰 טעויות יקרות - מתגלות מאוחר מדי"><strong>💰 Expensive mistakes</strong> — Discovered too late in the process</li>
-                    <li data-hebrew="👥 עומס ניהולי - תיאום מתמשך בין מומחים" style="margin-top: 12px; color: var(--emerald-green);"><strong>👥 Management overhead</strong> — Constant coordination between experts</li>
+            <h1 data-hebrew="⏰ פיתוח נדל״ן: שבועות של עבודה ידנית" style="font-size: 38px; margin-bottom: 16px;">⏰ Real Estate Development: Weeks of Manual Work</h1>
+            
+            <!-- The Cost of Uncertainty - HERO ELEMENT -->
+            <div class="connected-card hero-stat-box" style="margin: 12px 0 16px 0; padding: 20px 30px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(234, 179, 8, 0.12)); border: 3px solid var(--gold); border-radius: 16px; box-shadow: 0 20px 60px rgba(234, 179, 8, 0.25);">
+                <h2 style="text-align: center; margin-bottom: 8px; font-size: 18px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;" data-hebrew="💸 מחיר אי-הוודאות">💸 The Cost of Uncertainty</h2>
+                <div style="text-align: center; font-size: 54px; font-weight: 900; color: var(--gold); margin: 8px 0; line-height: 1; text-shadow: 0 4px 20px rgba(234, 179, 8, 0.4);">
+                    $20M
+                </div>
+                <p style="text-align: center; font-size: 19px; margin: 8px 0; line-height: 1.3; font-weight: 600;" data-hebrew="90% מפרויקטי הנדל״ן חורגים מהתקציב">
+                    <strong style="color: var(--gold);">90%</strong> of projects exceed budget · <strong>20%</strong> avg overrun
+                </p>
+                <p style="text-align: center; font-size: 15px; margin: 10px auto 6px auto; padding: 10px 18px; background: rgba(13, 148, 136, 0.25); border: 2px solid var(--emerald-green); border-radius: 10px; color: var(--emerald-green); font-weight: 700; max-width: 420px;" data-hebrew="✅ DAZ מונעת זאת תמורת ~$50K בשנה">
+                    ✅ DAZ prevents this for ~$50k/year
+                </p>
+            </div>
+            
+            <div class="connected-card" style="margin: 14px 0; padding: 18px 24px;">
+                <h2 style="text-align: center; margin-bottom: 12px; font-size: 22px;" data-hebrew="התהליך המסורתי">The Traditional Process</h2>
+                <ul style="font-size: 17px; line-height: 1.4; margin: 0;">
+                    <li data-hebrew="📋 שבועות של איסוף נתונים - איסוף ידני ממקורות מרובים" style="margin-bottom: 6px;"><strong>📋 Weeks of data gathering</strong> — Manual collection</li>
+                    <li data-hebrew="❌ החלטות מפוצלות - ללא מודיעין מרכזי" style="margin-bottom: 6px;"><strong>❌ Fragmented decisions</strong> — No centralized intelligence</li>
+                    <li data-hebrew="⚠️ אי-ודאות גבוהה - חוסר במידע קריטי" style="margin-bottom: 6px;"><strong>⚠️ High uncertainty</strong> — Missing critical information</li>
+                    <li data-hebrew="💰 טעויות יקרות - מתגלות מאוחר מדי" style="margin-bottom: 6px;"><strong>💰 Expensive mistakes</strong> — Discovered too late</li>
+                    <li data-hebrew="👥 עומס ניהולי - תיאום מתמשך בין מומחים" style="color: var(--emerald-green);"><strong>👥 Management overhead</strong> — Constant coordination</li>
                 </ul>
             </div>
             
-            <h2 style="margin-top: 40px; text-align: center; font-size: 26px;" data-hebrew="🌍 הזדמנות שוק עצומה">🌍 Massive Market Opportunity</h2>
-            <div class="market-grid">
-                <div class="market-box">
-                    <h3 style="color: var(--bright-blue); font-size: 22px;" data-hebrew="📈 שוק PropTech">📈 PropTech Market</h3>
-                    <p style="font-size: 26px; margin: 15px 0; line-height: 1.5;"><strong>$29B</strong> (2022) → <strong>$94B</strong> (2030) <span style="font-size: 18px; color: var(--text-muted);">global</span></p>
-                    <p style="font-size: 20px; margin: 8px 0;" data-hebrew="אירופה: ~$13B (2025) → ~$24B (2030)">Europe: <strong>~$13B</strong> (2025) → <strong>~$24B</strong> (2030)</p>
-                    <p style="color: var(--emerald-green); font-weight: 600; font-size: 18px;" data-hebrew="CAGR 15.8% גלובלי · 16%+ אירופה">CAGR 15.8% global · 16%+ Europe</p>
-                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;" data-hebrew="מקורות: Grand View Research; דוחות EU/אירופה">Sources: Grand View Research; EU/Europe reports</p>
+            <h2 style="margin-top: 14px; margin-bottom: 12px; text-align: center; font-size: 22px;" data-hebrew="🌍 הזדמנות שוק עצומה">🌍 Massive Market Opportunity</h2>
+            <div class="market-grid" style="grid-template-columns: repeat(3, 1fr); gap: 14px;">
+                <div class="market-box" style="padding: 16px 18px;">
+                    <h3 style="color: var(--bright-blue); font-size: 17px; margin-bottom: 8px;" data-hebrew="📈 שוק PropTech כולל">📈 Total PropTech</h3>
+                    <p style="font-size: 20px; margin: 8px 0; line-height: 1.2;"><strong>$29B</strong> → <strong>$94B</strong> <span style="font-size: 13px; color: var(--text-muted);">(2030)</span></p>
+                    <p style="color: var(--emerald-green); font-weight: 600; font-size: 15px; margin: 4px 0;" data-hebrew="CAGR 15.8%">CAGR 15.8%</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;" data-hebrew="כל טכנולוגיית נדל״ן">All real estate tech</p>
                 </div>
-                <div class="market-box">
-                    <h3 style="color: var(--bright-blue); font-size: 22px;" data-hebrew="🎯 שוקי יעד">🎯 Target Markets</h3>
-                    <ul style="list-style: none; font-size: 20px; margin-top: 12px; padding-left: 0; line-height: 1.7;">
-                        <li data-hebrew="• יזמי נדל״ן">• Real estate developers</li>
-                        <li data-hebrew="• יזמים">• Entrepreneurs</li>
-                        <li data-hebrew="• עורכי דין">• Lawyers</li>
-                        <li data-hebrew="• אדריכלים">• Architects</li>
-                        <li data-hebrew="• שמאים">• Appraisers</li>
-                    </ul>
+                <div class="market-box market-box-featured" style="padding: 16px 18px; border: 3px solid var(--bright-blue); background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.15)); position: relative; transform: scale(1.05); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);">
+                    <div style="position: absolute; top: 8px; right: 8px; background: var(--bright-blue); color: white; padding: 4px 10px; border-radius: 16px; font-size: 9px; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);" data-hebrew="⭐ המיקוד שלנו">⭐ OUR FOCUS</div>
+                    <h3 style="color: var(--bright-blue); font-size: 17px; margin-bottom: 8px;" data-hebrew="🎯 ניהול פיתוח נדל״ן">🎯 Development Mgmt</h3>
+                    <p style="font-size: 20px; margin: 8px 0; line-height: 1.2;"><strong>$12-15B</strong> <span style="font-size: 13px; color: var(--text-muted);">(focus)</span></p>
+                    <p style="color: var(--emerald-green); font-weight: 600; font-size: 15px; margin: 4px 0;" data-hebrew="CAGR ~12%">CAGR ~12%</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;" data-hebrew="כלי ניהול ליזמים">Dev management tools</p>
+                </div>
+                <div class="market-box" style="padding: 16px 18px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.15));">
+                    <h3 style="color: var(--emerald-green); font-size: 17px; margin-bottom: 8px;" data-hebrew="🚀 שוק זמין">🚀 Addressable Market</h3>
+                    <p style="font-size: 20px; margin: 8px 0; line-height: 1.2;"><strong>$4-5B</strong> <span style="font-size: 13px; color: var(--text-muted);">(SAM)</span></p>
+                    <p style="font-weight: 600; font-size: 15px; margin: 4px 0;" data-hebrew="EU + US + ישראל">EU + US + Israel</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;" data-hebrew="יזמים בינוניים-גדולים">Mid-large developers</p>
                 </div>
             </div>
         </div>
@@ -2176,7 +2274,82 @@
             </p>
         </div>
 
-        <!-- Slide 4: How It Works -->
+        <!-- Slide 4: Competition & Our Moat -->
+        <div class="slide">
+            <h1 data-hebrew="🏆 למה פתרונות קיימים לא מספיקים">🏆 Why Existing Solutions Fall Short</h1>
+            <p style="text-align: center; font-size: 20px; margin-bottom: 35px; color: var(--warm-gray);" data-hebrew="מדור כלים מנותקים לדור מערכות אוטונומיות">
+                From disconnected tools → to autonomous orchestration
+            </p>
+            
+            <!-- Competition Landscape -->
+            <div class="market-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 35px;">
+                <div class="connected-card" style="text-align: center; opacity: 0.7;">
+                    <h3 style="color: var(--bright-blue); font-size: 22px; margin-bottom: 15px;" data-hebrew="🔧 פתרונות נקודתיים">🔧 Point Solutions</h3>
+                    <p style="font-size: 16px; margin: 12px 0; color: var(--warm-gray);">Procore, Autodesk, CoStar</p>
+                    <div style="margin: 20px 0; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                        <p style="font-size: 18px; line-height: 1.6;" data-hebrew="✅ כלים מצוינים לתחום אחד<br/>❌ אין תקשורת ביניהם<br/>❌ אתה עדיין המתאם">
+                            ✅ Great tools for one domain<br/>
+                            ❌ No communication between them<br/>
+                            ❌ You're still the coordinator
+                        </p>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-muted); font-style: italic;" data-hebrew="דור 1: כלים דיגיטליים">Gen 1: Digital Tools</p>
+                </div>
+                
+                <div class="connected-card" style="text-align: center; opacity: 0.7;">
+                    <h3 style="color: var(--bright-blue); font-size: 22px; margin-bottom: 15px;" data-hebrew="🤖 צ׳אטבוטים AI">🤖 AI Chatbots</h3>
+                    <p style="font-size: 16px; margin: 12px 0; color: var(--warm-gray);">Generic LLMs</p>
+                    <div style="margin: 20px 0; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+                        <p style="font-size: 18px; line-height: 1.6;" data-hebrew="✅ יכולים לענות על שאלות<br/>❌ לא יכולים לתזמר פעולות<br/>❌ חסרים הקשר נדל״ני עמוק">
+                            ✅ Can answer questions<br/>
+                            ❌ Can't orchestrate actions<br/>
+                            ❌ Lack deep real estate context
+                        </p>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-muted); font-style: italic;" data-hebrew="דור 2: עוזרים מגיבים">Gen 2: Reactive Assistants</p>
+                </div>
+                
+                <div class="connected-card" style="text-align: center; border: 3px solid var(--emerald-green); transform: scale(1.05); background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(13, 148, 136, 0.15));">
+                    <h3 style="color: var(--emerald-green); font-size: 22px; margin-bottom: 15px;" data-hebrew="⚡ DAZ - רשת סוכנים">⚡ DAZ - Agent Network</h3>
+                    <p style="font-size: 16px; margin: 12px 0; color: var(--warm-gray);">Multi-Agent Orchestration</p>
+                    <div style="margin: 20px 0; padding: 15px; background: rgba(13, 148, 136, 0.2); border-radius: 8px;">
+                        <p style="font-size: 18px; line-height: 1.6;" data-hebrew="✅ סוכנים מומחים שמדברים ביניהם<br/>✅ מאתגרים ומאזנים זה את זה<br/>✅ ביצוע אוטונומי של משימות">
+                            ✅ Expert agents that talk to each other<br/>
+                            ✅ Challenge and balance decisions<br/>
+                            ✅ Autonomous task execution
+                        </p>
+                    </div>
+                    <p style="font-size: 14px; color: var(--emerald-green); font-weight: 700;" data-hebrew="דור 3: מערכות אוטונומיות">Gen 3: Autonomous Systems</p>
+                </div>
+            </div>
+            
+            <!-- The Moat -->
+            <div class="connected-card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(13, 148, 136, 0.1)); border-left: 4px solid var(--emerald-green);">
+                <h2 style="text-align: center; margin-bottom: 20px; font-size: 26px; color: var(--emerald-green);" data-hebrew="🔐 החפיר הטכנולוגי שלנו">🔐 Our Technical Moat</h2>
+                <p style="text-align: center; font-size: 22px; margin: 15px 0; line-height: 1.6;" data-hebrew="לוגיקה קניינית של איך סוכן פיננסי מאתגר סוכן אדריכלי">
+                    <strong>Proprietary logic</strong> for how a Financial Agent challenges an Architect Agent
+                </p>
+                <p style="text-align: center; font-size: 20px; margin: 15px 0; color: var(--warm-gray);" data-hebrew="זה לא צ׳אטבוט - זה תזמורת של מומחים דיגיטליים שעובדים כצוות">
+                    This isn't a chatbot — it's an orchestra of digital experts working as a team
+                </p>
+                <div style="display: flex; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 18px; color: var(--bright-blue); font-weight: 600;" data-hebrew="📊 לוגיקת תחום">📊 Domain Logic</p>
+                        <p style="font-size: 14px; color: var(--text-muted);" data-hebrew="נדל״ן + משפט + פיננסים">RE + Legal + Finance</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 18px; color: var(--bright-blue); font-weight: 600;" data-hebrew="🔄 מנועי תזמור">🔄 Orchestration Engine</p>
+                        <p style="font-size: 14px; color: var(--text-muted);" data-hebrew="זרימות עבודה אוטונומיות">Autonomous workflows</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 18px; color: var(--bright-blue); font-weight: 600;" data-hebrew="🧠 זיכרון קשרי">🧠 Contextual Memory</p>
+                        <p style="font-size: 14px; color: var(--text-muted);" data-hebrew="למידה לאורך פרויקטים">Cross-project learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: How It Works -->
         <div class="slide">
             <h1 data-hebrew="🔄 איך DAZ עובד: המסע של הפרויקט שלך">🔄 How DAZ Works: Your Project Journey</h1>
             
@@ -2229,7 +2402,7 @@
             </div>
         </div>
 
-        <!-- Slide 5: Business Model + Segments -->
+        <!-- Slide 6: Business Model + Segments -->
         <div class="slide">
             <h1 data-hebrew="💰 מודל עסקי: שכבות ערך">💰 Business Model: Tiered Value Delivery</h1>
             
@@ -2272,7 +2445,7 @@
             </div>
         </div>
 
-        <!-- Slide 6: Roadmap + Team -->
+        <!-- Slide 7: Roadmap + Team -->
         <div class="slide">
             <h1 data-hebrew="🚀 המסע והצוות שלנו">🚀 Our Journey & Team</h1>
             <p style="text-align: center; font-size: 18px; color: var(--warm-gray); margin-bottom: 35px;" data-hebrew="בונים את עתיד הנדל״ן עם הנהגה מומחית">
@@ -2372,7 +2545,7 @@
             </div>
         </div>
 
-        <!-- Slide 7: The Ask -->
+        <!-- Slide 8: The Ask -->
         <div class="slide" style="justify-content: flex-start; padding: 45px 80px 50px 80px;">
             <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 36px;" data-hebrew="🚀 הצטרפו אלינו: בונים את העתיד">🚀 Join Us: Building the Future</h1>
             
